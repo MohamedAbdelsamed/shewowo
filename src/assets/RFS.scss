@@ -1,0 +1,138 @@
+/* a simple responsive typography with vw */
+h1 {
+  font-size: 2.8vw !important;
+}
+
+h2 {
+  font-size: 2.3vw !important;
+}
+
+h3 {
+  font-size: 1.8vw !important;
+}
+
+h4 {
+  font-size: 1.3vw !important;
+}
+
+h5 {
+  font-size: 0.8vw !important;
+}
+
+span {
+  font-size: 0.8vw !important;
+}
+
+p {
+  font-size: 1vw !important;
+}
+
+li {
+  font-size: 1.2vw !important;
+}
+
+th, td {
+  font-size: 1vw !important;
+}
+
+a {
+  font-size: 1vw !important;
+}
+
+@media screen and (max-width: 992px){
+  h1 {
+    font-size: 4vw !important;
+  }
+  h2 {
+    font-size: 3.5vw !important;
+  }
+  h3 {
+    font-size: 3vw !important;
+  }
+  h4 {
+    font-size: 2.5vw !important;
+  }
+  h5 {
+    font-size: 2vw !important;
+  }
+  span {
+    font-size: 2vw !important;
+  }
+  p {
+    font-size: 2.1vw !important;
+  }
+  li {
+    font-size: 1.6vw !important;
+  }
+  th, td {
+    font-size: 1.4vw !important;
+  }
+  a {
+    font-size: 1.4vw !important;
+  }
+}
+@media screen and (max-width: 768px){
+  h1 {
+    font-size: 5vw !important;
+
+  }
+  h2 {
+    font-size: 4.5vw !important;
+  }
+  h3 {
+    font-size: 4vw !important;
+  }
+  h4 {
+    font-size: 3.5vw !important;
+  }
+  h5 {
+    font-size: 3vw !important;
+  }
+  span {
+    font-size: 2.5vw !important;
+  }
+  p {
+    font-size: 3.1vw !important;
+  }
+  li {
+    font-size: 2.2vw !important;
+  }
+  th, td {
+    font-size: 1.8vw !important;
+  }
+  a {
+    font-size: 2vw !important;
+  }
+}
+@media screen and (max-width: 576px){
+  h1 {
+    font-size: 6vw !important;
+  }
+  h2 {
+    font-size: 5.5vw !important;
+  }
+  h3 {
+    font-size: 5vw !important;
+  }
+  h4 {
+    font-size: 4.5vw !important;
+  }
+  h5 {
+    font-size: 4vw !important;
+  }
+  span {
+    font-size: 3vw !important;
+  }
+  p {
+    font-size: 3.5vw !important;
+  }
+  li {
+    font-size: 2.6vw !important;
+  }
+  th, td {
+    font-size: 2.2vw !important;
+  }
+  a {
+    font-size: 2.4vw !important;
+  }
+}

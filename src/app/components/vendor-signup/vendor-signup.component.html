@@ -1,0 +1,200 @@
+<div class="main">
+<nav>
+    <ul>
+        <li class="mv-20">
+            <a href="#" class="black-color lang">
+                العربية
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<section class="main-wrapper  text-center">
+    <div class="img-wrapper mb-40 d-flex justify-content-center">
+        <img src="assets/logo-dark.png" class="logo" alt="">
+    </div>
+
+    <h4 class="font-weight-bold h2 text-center">create a shewow account </h4>
+
+    <p class="text-muted text-center uk-margin-remove sign"> 
+        Already have an account?
+
+        <a href="http://dashboard.wow.ieeeshasb.org" target="_blank" class="sign-in">
+            sign in
+        </a>
+    </p>
+
+    <form #userForm="ngForm" (ngSubmit)="signup(userForm.value);" class="login-form" [ngClass]="{'disable': isLoading}" >
+        <div class="form-group user-wrapper">
+            <input 
+                [ngClass]="{ 'err': email.invalid && email.touched}"
+                ngModel #email="ngModel" required email name="email" id="email" type="text" class="form-control input-user">
+                <label #emailLabel for="email" class="user-label"
+                [ngClass]="{ 'err': email.invalid && email.touched}"
+                > Email</label>
+    
+                
+          <div *ngIf="!email.valid && email.touched" class="" >
+            <div class="text-danger" *ngIf="email.errors.required"> <small>this field is Required</small> </div>
+            <div class="text-danger" *ngIf="email.errors.email"> <small>invalid email</small> </div>
+          </div>
+        </div>
+    
+        <div class="form-group user-wrapper">
+            <input 
+                [ngClass]="{ 'err': password.invalid && password.touched}"
+    
+                 ngModel required minlength="8" id="password" #password="ngModel"  name="password" type="password" class="form-control input-user">
+                <label #passwordLabel for="password" class="user-label"
+                [ngClass]="{ 'err': password.invalid && password.touched}"
+
+                > password</label>
+    
+            <div *ngIf="!password.valid && password.touched" class="" >
+                <div class=" text-danger" *ngIf="password.errors.required"> <small>required Field </small>  </div>
+                <div class=" text-danger" *ngIf="password.errors.minlength"> <small> Minimum length is 8 characters  </small>  </div>
+            </div>
+        </div>
+    
+    
+        <div class="form-group user-wrapper">
+           
+            <input 
+                [ngClass]="{ 'err': first_name.invalid && first_name.touched}"
+    
+                 ngModel required id="first_name" #first_name="ngModel"  name="first_name" type="first_name" class="form-control input-user">
+                <label #first_nameLabel for="first_name" class="user-label"
+                [ngClass]="{ 'err': first_name.invalid && first_name.touched}"
+                
+                > First Name</label>
+            <div *ngIf="!first_name.valid && first_name.touched" class="" >
+                <div class=" text-danger" *ngIf="first_name.errors.required"> <small>required Field </small>  </div>
+            </div>
+        </div>
+    
+
+        <div class="form-group user-wrapper">
+            <input 
+                [ngClass]="{ 'err': last_name.invalid && last_name.touched}"
+    
+                 ngModel required id="last_name" #last_name="ngModel"  name="last_name" type="last_name" class="form-control input-user">
+                <label #last_nameLabel for="last_name" class="user-label"
+                [ngClass]="{ 'err': last_name.invalid && last_name.touched}"
+
+                > last Name</label>
+    
+            <div *ngIf="!last_name.valid && last_name.touched" class="" >
+                <div class=" text-danger" *ngIf="last_name.errors.required"> <small>required Field </small>  </div>
+            </div>
+        </div>
+    
+    
+        
+        <div class="form-group user-wrapper">
+            <input 
+                [ngClass]="{ 'err': company_name.invalid && company_name.touched}"
+    
+                company_name ngModel required id="company_name" #company_name="ngModel"  name="company_name" class="form-control input-user">
+                <label #company_nameLabel for="company_name" class="user-label"
+                [ngClass]="{ 'err': company_name.invalid && company_name.touched}"
+
+                > company Name</label>
+    
+            <div *ngIf="!company_name.valid && company_name.touched" class="" >
+                <div class=" text-danger" *ngIf="company_name.errors.required"> <small>required Field </small>  </div>
+            </div>
+        </div>
+    
+           
+        <div class="form-group user-wrapper">
+            <input 
+                [ngClass]="{ 'err': phone.invalid && phone.touched}"
+    
+                phone ngModel required id="phone" #phone="ngModel"  name="phone" type="number" class="form-control input-user">
+                <label #phoneLabel for="phone" class="user-label"
+                [ngClass]="{ 'err': phone.invalid && phone.touched}"
+
+                > Phone</label>
+    
+            <div *ngIf="!phone.valid && phone.touched" class="" >
+                <div class=" text-danger" *ngIf="phone.errors.required"> <small>required Field </small>  </div>
+            </div>
+        </div>
+
+
+        <div class="form-group user-wrapper">
+            <input 
+                [ngClass]="{ 'err': id_number.invalid && id_number.touched}"
+    
+                id_number ngModel required id="id_number" #id_number="ngModel"  name="id_number" type="number" class="form-control input-user">
+                <label #id_numberLabel for="id_number" class="user-label"
+                [ngClass]="{ 'err': id_number.invalid && id_number.touched}"
+                
+                > Id number</label>
+    
+            <div *ngIf="!id_number.valid && id_number.touched" class="" >
+                <div class=" text-danger" *ngIf="id_number.errors.required"> <small>required Field </small>  </div>
+            </div>
+        </div>
+        
+
+        <div (click)="openFile(idBtn, 'id_attch')" class="form-group user-wrapper">
+            <input  (change)="uploadFile($event.target, 'id_attch')" 
+                [ngClass]="{ 'err': id_attch.invalid && id_attch.touched}"
+    
+                id_attch  required id="id_attch" #id_attch  name="id_attch" type="file" class="d-none form-control input-user">
+
+                    
+                <input #idBtn type="text" [value]="idFileLabel" readonly (keyup)="openFile(idBtn, 'id_attch')"  class="form-control input-user position-relative"
+                [ngClass]="{ 'err': idFileErr}"
+                
+                >
+                    <!-- no File Choosen -->
+               
+
+                <label #id_attchLabel class="user-label"
+                [ngClass]="{ 'err': idFileErr}"
+
+                > Identity Card</label>
+        </div>
+
+        <div (click)="openFile(fileBtn, 'company_attch')" class="form-group user-wrapper">
+            <input (change)="uploadFile($event.target, 'company_attch')" 
+                   id="company_attch" #company_attch  name="company_attch" type="file" class="d-none form-control input-user">
+
+                
+                <input (keyup)="openFile(fileBtn, 'company_attch')" readonly
+                [ngClass]="{ 'err': companyErr}"
+                #fileBtn type="text" for="" [value]="companyFileLabel" class="form-control input-user position-relative">
+                    <!-- no File Choosen -->
+               
+
+                <label 
+                [ngClass]="{ 'err': companyErr}"
+                #company_attchLabel  class="d-block w-100 user-label err"
+                
+                > Company File</label>
+        </div>
+    
+        <div class="form-group">
+            <input [disabled]="!userForm.valid" type="submit" class="btn submit-btn text-uppercase form-control submit-btn" value="creat accounts">
+        </div>
+
+        <div *ngIf="isLoading" class="row spinner-wrapper">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </form>
+
+    
+    <p class="text-muted text-center uk-margin-remove sign pb-30"> 
+        Create New Client account 
+ 
+         <a routerLink ="/signup" class="sign-in">
+             sign up as a client
+         </a>
+     </p>
+    
+</section>
+</div>

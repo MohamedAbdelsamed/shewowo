@@ -1,0 +1,27 @@
+@import "../../../assets/variables";
+
+.ar { // arabic style will be here
+
+}
+
+.en { // English style will be here
+
+}
+
+.global { // shared style for both arabic and english
+  background-color: $bodyColor;
+  .home-container {
+    max-width: 95%;
+    margin: auto;
+    background-color: $bgColor;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .global {
+    .home-container {
+      max-width: 100%;
+    }
+  }
+
+}

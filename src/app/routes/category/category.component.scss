@@ -1,0 +1,47 @@
+
+@import "../../../assets/variables";
+.global {
+  .custom-container {
+    max-width: 95%;
+    margin: auto;
+    .content {
+      background-color: #ffffff;
+      .sub-categories {
+        padding: 3rem 2rem;
+        .header {
+          .header-text {
+            color: rgba(black, 0.8);
+            font-weight: bold;
+          }
+        }
+        .category-row {
+          min-height: 200px;
+          //background-color: #88A3EC;
+          .img-container {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.en {
+
+}
+
+.ar {
+
+}
+
+.loaded {
+  background-color: white;
+}
+
+@media only screen and (max-width: 1450px) {
+  .global {
+    .custom-container {
+      max-width: 100%;
+    }
+  }
+}

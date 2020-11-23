@@ -1,0 +1,32 @@
+.name{
+    color: rgb(64, 69, 83);
+    font-weight: 600;
+    font-size: 1.3rem !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 50px;
+    position: relative;
+}
+
+.description{
+    font-size: .9rem !important;
+    color: rgb(126, 133, 155);  
+    font-weight: 300;
+}
+
+.btn-primary{
+    font-size: 1.08333rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    transition: opacity 0.25s ease-in-out 0s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}

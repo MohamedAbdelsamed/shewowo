@@ -1,0 +1,637 @@
+<section class="shared" [ngClass]="{'en': !isArabic, 'ar': isArabic}">
+    <div class="shewow-container">
+        <!--  bread crump  -->
+        <div class="bread-crump-part">
+            <a *ngFor="let crumb of crumbContainer; let i = index">{{crumb.title}} <i
+                    *ngIf="i === crumbContainer.length - 1" class="fa fa-angle-right wow-right"
+                    aria-hidden="true"></i></a>
+        </div>
+        <!-- mobile-filter-left-part -->
+        <div class="row">
+            <div class="col-12 mobile-filter-left-part">
+                <div class="results">
+                    <span class="res-number">415 results found for</span>
+                    <span class="res-caption"><b> Home Care & Cleaning</b></span>
+                </div>
+                <div class="repon-filter">
+                    <ul class="uk-margin-remove uk-padding-remove">
+                        <li class="mobile-filter" uk-toggle="target: #mobileFilter">
+                            <a>FILTER</a>
+                            <i class="fas fa-filter" id="mob-filter"></i>
+                        </li>
+                        <li class="mobile-sort" uk-toggle="target: #mobileSort">
+                            <a>SORT</a>
+                            <i class="fas fa-sort-amount-up" id="mob-sort"></i>
+                        </li>
+                        <li class="mobile-grid">
+                            <a>ROW</a>
+                            <i class="fas fa-list-ul" id="mob-grid"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 filter-left-part">
+                <div class="filteration">
+                    <div class="">
+                        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
+                            <!-- filtration Category -->
+                            <li class="uk-parent uk-open">
+                                <a class="accordion-head">Category</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> All
+                                        Categories</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> Home &
+                                        Kitchen</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> Kitchen & Dining</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between align-items-center py-2 px-2"><span>Cookware</span><span>(44)</span></a>
+                                        <ul>
+                                            <li><a href="#"
+                                                   class="d-flex justify-content-between align-items-center pl-2`"><span>Works & Stir-fry Pans</span>
+                                                <span>(5)</span></a></li>
+                                            <li><a href="#"
+                                                   class="d-flex justify-content-between align-items-center pl-2`"><span>Preassure & Cookers</span>
+                                                <span>(1)</span></a></li>
+                                            <li><a href="#"
+                                                   class="d-flex justify-content-between align-items-center pl-2`"><span>Casseroles</span>
+                                                <span>(4)</span></a></li>
+                                            <li><a href="#"
+                                                   class="d-flex justify-content-between align-items-center pl-2`"><span>Works & Pans</span>
+                                                <span>(5)</span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- filtraition Transportaion -->
+                            <li class="uk-parent uk-open">
+                                <a class="accordion-head">Fulfillment <sup class="text-primary">Clear</sup></a>
+                                <ul class="uk-nav-sub uk-padding-remove">
+                                    <li class="transport-part">
+                                        <div class="form-group">
+                                            <form>
+                                                <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox" checked></label>
+                                                <img src="assets/shewowexpress.png" alt="express">
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- filtration Brand -->
+                            <li class="uk-parent uk-open">
+                                <a class="accordion-head">Brand</a>
+                                <ul class="uk-nav-sub uk-padding-remove">
+                                    <form class="uk-search uk-search-default mb-3">
+                                        <span uk-search-icon></span>
+                                        <input class="uk-search-input" type="search" placeholder="Search...">
+                                    </form>
+                                    <br>
+                                    <form>
+                                    <div class="form-group" style="margin-bottom: 0.5rem">
+                                        <div class="filter-brands">
+                                            <div class="brands-left">
+                                                <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                <span>Velveta</span>
+                                            </div>
+                                            <div class="brands-right">
+                                                <span>(40)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                    <div class="form-group" style="margin-bottom: 0.5rem">
+                                        <div class="filter-brands">
+                                            <div class="brands-left">
+                                                <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                <span>Velveta</span>
+                                            </div>
+                                            <div class="brands-right">
+                                                <span>(40)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-10">
+                <!-- product details -->
+                <div class="product-details">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="results-popularity">
+                                <div class="results">
+                                    <span class="res-number">415 results found for</span>
+                                    <span class="res-caption"><b> Home Care & Cleaning</b></span>
+                                </div>
+                                <div class="sorting">
+                                    <div class="sort-by">
+                                        <form>
+                                            <div class="sort-span">
+                                                <span>SORT BY</span>
+                                            </div>
+                                            <div class="selection-box" uk-form-custom="target: > * > span:first-child">
+                                                <select>
+                                                    <option value="">POPULARITY</option>
+                                                    <option value="1">Option 01</option>
+                                                    <option value="2">Option 02</option>
+                                                    <option value="3">Option 03</option>
+                                                    <option value="4">Option 04</option>
+                                                </select>
+                                                <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                                                    <span></span>
+                                                    <span uk-icon="icon: chevron-down"></span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="display">
+                                        <form>
+                                            <div class="display-span">
+                                                <span>DISPLAY</span>
+                                            </div>
+                                            <div class="selection-box" uk-form-custom="target: > * > span:first-child">
+                                                <select>
+                                                    <option value="">50 PER PAGE</option>
+                                                    <option value="1">Option 01</option>
+                                                    <option value="2">Option 02</option>
+                                                    <option value="3">Option 03</option>
+                                                    <option value="4">Option 04</option>
+                                                </select>
+                                                <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                                                    <span></span>
+                                                    <span uk-icon="icon: chevron-down"></span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="grid-toggle">
+                                        <span>ROW</span>
+                                        <div class="list-icon">
+                                            <i class="fas fa-list-ul" id="list"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product items -->
+                <div class="product-items">
+                    <div class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-5@l" uk-grid>
+                        <div>
+                        <div class="uk-card">
+                            <div class="uk-card-media-top">
+                                <img src="../../../assets/regina.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <div class="description">
+                                    <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                </div>
+                                <div class="price">
+                                    <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                </div>
+                                <div class="discount">
+                                    <span class="discount-value">18% off</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div>
+                            <div class="uk-card">
+                                <div class="uk-card-media-top">
+                                    <img src="../../../assets/regina.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="description">
+                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="discount-value">18% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card">
+                                <div class="uk-card-media-top">
+                                    <img src="../../../assets/regina.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="description">
+                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="discount-value">18% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card">
+                                <div class="uk-card-media-top">
+                                    <img src="../../../assets/regina.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="description">
+                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="discount-value">18% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card">
+                                <div class="uk-card-media-top">
+                                    <img src="../../../assets/regina.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="description">
+                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="discount-value">18% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card">
+                                <div class="uk-card-media-top">
+                                    <img src="../../../assets/regina.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="description">
+                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="discount-value">18% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card">
+                                <div class="uk-card-media-top">
+                                    <img src="../../../assets/regina.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="description">
+                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="discount-value">18% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card">
+                                <div class="uk-card-media-top">
+                                    <img src="../../../assets/regina.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="description">
+                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="discount-value">18% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card">
+                                <div class="uk-card-media-top">
+                                    <img src="../../../assets/regina.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="description">
+                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="discount-value">18% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card">
+                                <div class="uk-card-media-top">
+                                    <img src="../../../assets/regina.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="description">
+                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="discount-value">18% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+<!-- mobile filter offcanvas   -->
+
+    <div id="mobileFilter" uk-offcanvas="overlay: true;">
+        <div class="uk-offcanvas-bar uk-padding-remove">
+            <div class="head-part">
+                <div class="head-left">
+                    <span>Filter</span>
+                </div>
+                <div class="head-right">
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                </div>
+            </div>
+            <div class="canvas-body">
+                <div class="filteration">
+                    <div class="">
+                        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
+                            <!-- filtration Category -->
+                            <li class="uk-parent">
+                                <a class="accordion-head">Category</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> All
+                                        Categories</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> Home &
+                                        Kitchen</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> Kitchen & Dining</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between align-items-center py-2 px-2"><span>Cookware</span><span>(44)</span></a>
+                                        <ul>
+                                            <li><a href="#"
+                                                   class="d-flex justify-content-between align-items-center pl-2`"><span>Works & Stir-fry Pans</span>
+                                                <span>(5)</span></a></li>
+                                            <li><a href="#"
+                                                   class="d-flex justify-content-between align-items-center pl-2`"><span>Preassure & Cookers</span>
+                                                <span>(1)</span></a></li>
+                                            <li><a href="#"
+                                                   class="d-flex justify-content-between align-items-center pl-2`"><span>Casseroles</span>
+                                                <span>(4)</span></a></li>
+                                            <li><a href="#"
+                                                   class="d-flex justify-content-between align-items-center pl-2`"><span>Works & Pans</span>
+                                                <span>(5)</span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- filtraition Transportaion -->
+                            <li class="uk-parent">
+                                <a class="accordion-head">Fulfillment <sup class="text-primary">Clear</sup></a>
+                                <ul class="uk-nav-sub uk-padding-remove">
+                                    <li class="transport-part">
+                                        <div class="form-group">
+                                            <form>
+                                                <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox" checked></label>
+                                                <img src="assets/shewowexpress.png" alt="express">
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- filtration Brand -->
+                            <li class="uk-parent">
+                                <a class="accordion-head">Brand</a>
+                                <ul class="uk-nav-sub uk-padding-remove">
+                                    <form class="uk-search uk-search-default mb-3">
+                                        <span uk-search-icon></span>
+                                        <input class="uk-search-input" type="search" placeholder="Search...">
+                                    </form>
+                                    <br>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-bottom: 0.5rem">
+                                            <div class="filter-brands">
+                                                <div class="brands-left">
+                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
+                                                    <span>Velveta</span>
+                                                </div>
+                                                <div class="brands-right">
+                                                    <span>(40)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- mobile sort offcanvas   -->
+
+    <div id="mobileSort" uk-offcanvas="overlay: true">
+        <div class="uk-offcanvas-bar uk-padding-remove" style="width: 270px">
+            <div class="head-part">
+                <div class="head-left">
+                    <span>Sort</span>
+                </div>
+                <div class="head-right">
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                </div>
+            </div>
+            <div class="canvas-body">
+                <div class="selection-box" uk-form-custom="target: > * > span:first-child">
+                    <select>
+                        <option value="">POPULARITY</option>
+                        <option value="1">Option 01</option>
+                        <option value="2">Option 02</option>
+                        <option value="3">Option 03</option>
+                        <option value="4">Option 04</option>
+                    </select>
+                    <button class="uk-button uk-button-default" style="width: 260px" type="button" tabindex="-1">
+                        <span></span>
+                        <span uk-icon="icon: chevron-down"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

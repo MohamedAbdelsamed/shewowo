@@ -1,0 +1,129 @@
+// @import "variables";
+@import "../assets/variables";
+
+.lang{
+    margin: 0 20rem;
+    &:hover{
+        text-decoration: none;
+        color: #3866df;
+    }
+}
+
+.main-wrapper{
+    width: 80%;
+    margin: auto;
+    min-height: 100vh;
+  
+    .logo{
+        width: 200px !important;
+    }
+}
+
+// from rentage
+
+.login-form{
+    padding: 0 150px 0 100px;
+    font-size: 20px;
+    color: $blackColor;
+    width: 65%;
+    margin: auto;
+    position: relative;
+    transition: $mainTransition;
+    &.disable{
+        pointer-events: none;
+        width: 60%;
+    }
+
+    .spinner-wrapper{
+        // z-index: 1000;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        bottom: 50%;
+        right: 50%;
+    }
+
+    .user-wrapper{
+        position: relative;
+        margin-bottom: 30px;
+        .input-user{
+            caret-color: $blackColor;
+            height: 20px;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 30px  5px;
+            border: none;
+            border-bottom: 2px solid rgba(56,102,223,.1);
+            border-radius: 0;
+            transition: $mainTransition;
+            color: $blackColor;
+            background-color: transparent;
+
+            &:focus{
+                box-shadow: none;
+                border-bottom: 2px solid rgba(56,102,223,.8);
+            }
+
+            &.err{
+                border-bottom: 2px solid red!important;
+
+            }
+
+            &:not(:focus):invalid + label{
+            //    position: static;
+                 transform: translateY(-34px);
+                 font-size: .9em;
+            }
+        }
+
+        .user-label{
+            font-size: .8em;
+            padding-left: .2rem;
+            position: absolute;
+           
+            transition: .2s;
+            color: #7e859b;
+            cursor: text;
+            transform: translateY(-65px);
+
+            &.err{
+                color: red!important;
+            }
+        }
+
+        
+       
+    }
+
+    // submit button
+    .submit-btn{
+        background-color: #3866df;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 0;
+        // padding: .8rem 0;
+        height: 58px;
+        transition: .2s;
+        box-shadow: none;
+        &:hover{
+            background-color: #2f56bc;
+            cursor: pointer;
+        }
+
+        &:disabled{
+            cursor: not-allowed;
+        }
+        &:active{
+            transform: scale(.96);
+        }
+    }
+    .remember-me{
+        .forget-password{
+            color: $blackColor;
+
+            &:hover{
+                color: $mainColor
+            }
+        }
+    }
+}

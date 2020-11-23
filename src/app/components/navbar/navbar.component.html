@@ -1,0 +1,521 @@
+<!-- shewow navbar -->
+<nav [ngClass]="{'ar': isArabic, 'en': !isArabic}" class="shared">
+  <!--  upper navbar  -->
+  <div *ngIf="!middleNavOnly" class="upper-nav">
+    <div class="shewow-container">
+      <div class="nav-lang-part">
+                <span class="shewow-lang">
+                    <a (click)="toggleDirection()" translate>lang</a>
+                </span>
+        <span class="shewow-separator">
+
+                </span>
+        <span class="shewow-flag">
+                    <img src="assets/iraqflag.png" alt="iraq">
+                </span>
+      </div>
+      <div class="best-deals-part">
+                <span class="easy">
+                    <i class="fas fa-truck" id="truck"></i>
+                    <span class="free-caption">
+                        FREE & EASY RETURNS
+                    </span>
+                </span>
+        <span class="deals">
+                    <i class="far fa-handshake" id="deal"></i>
+                    <span class="best-caption">BEST DEALS</span>
+                </span>
+      </div>
+    </div>
+  </div>
+
+  <!--    sticky navbar-->
+  <div style="z-index: 980;" uk-sticky="show-on-up: true; animation: uk-animation-slide-top; bottom: #bottom">
+    <!--  middle navbar  -->
+    <div class="middle-navbar">
+      <div class="shewow-container">
+        <div class="logo-part">
+          <div class="small-screen-toggler" uk-toggle="target: #offcanvas-slide">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <a routerLink="/"><img src="assets/shewowlogo.png" alt="shewow-logo"></a>
+        </div>
+        
+        <div class="searchbar-part">
+          <div class="uk-margin-remove">
+            <form class="uk-search uk-search-default">
+              <a class="uk-search-icon-flip" uk-search-icon></a>
+              <input class="uk-search-input" type="search"
+                     placeholder="{{ isArabic ? 'انت بتدور علي ايه؟' : 'What are you looking for?'}}">
+            </form>
+          </div>
+        </div>
+
+        <div class="cart-signupin-part">
+          <div class="small-search" (click)="toggleSmallSearch()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </div>
+
+          <div class="signup-in">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" id="profileDropDown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false" translate>
+                  <span class="d-block hala"> <small>Hala karim</small></span>
+                  My Account
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropDown">
+                  <ul class="p-0">
+                    <li class="profile-dropdown">
+                      <a routerLink="settings/orders" class="d-block profile-dropdown-item" href="">
+                        <i class="fas fa-list-alt"></i>
+                        Orders 
+                      </a>
+                    </li>
+                    
+                    <li class="profile-dropdown">
+                      <a class="d-block profile-dropdown-item" href="">
+                        <i class="fas fa-address-card"></i>
+                        Address 
+                      </a>
+                    </li>
+                    
+                    <li class="profile-dropdown">
+                      <a class="d-block profile-dropdown-item" href="">
+                        <i class="fas fa-credit-card"></i>
+                        Payment 
+                      </a>
+                    </li>
+
+                     
+                    <li class="profile-dropdown">
+                      <a class="d-block profile-dropdown-item" href="">
+                        <i class="fas fa-undo-alt"></i>
+                        Returns 
+                      </a>
+                    </li>
+                    
+                    <!-- <i class="far fa-user"></i> -->
+
+                    <li class="profile-dropdown">
+                      <a class="d-block profile-dropdown-item" href="">
+                        <i class="far fa-user"></i>
+                        Profile 
+                      </a>
+                    </li>
+
+                    <hr>
+                    <li class="profile-dropdown">
+                      <a class="d-block profile-dropdown-item singout" href="">
+                        Sign Out
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="seprator"></div>
+
+          <div class="signup-in">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false" translate>
+                  sign
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div class="form-group">
+                    <span class="return-customer">Returning Customer</span>
+                    <div class="form-group">
+                      <button routerLink="/login">SIGN IN</button>
+                    </div>
+                    <hr>
+                    <span class="have-account">Don't have an account?</span>
+                    <span class="signup"><a routerLink="/signup">SIGN UP</a></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+    
+
+          <div class="seprator">
+          </div>
+          <a class="cart">
+            <button class="btn uk-padding-remove">
+              <a>Cart</a>
+              <i class="fas fa-shopping-cart" id="cart"></i>
+            </button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Category navbar-->
+    <div *ngIf="!middleNavOnly" class="category-navbar">
+      <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item all-cat-parent" (mouseover)="showOpacity()" (mouseleave)="hideOpacity()">
+              <a class="nav-link" href="#" id="all-categories">ALL CATEGORIES
+                 <i class="fas fa-caret-down" id="caret"></i>
+              </a>
+   
+              <div class="hover-overlayer">
+                <div class="layer-content">
+                  <div class="left-part">
+                    <h5 *ngFor="let item of navData; index as i" [ngClass]="{'active': i === activeIndex}" class="main-cat" (mouseover)="getRigthPart(i)">
+                    
+                      {{item.name}}
+                    </h5>
+                  </div>
+                  
+                  <div class="right-part">
+                    <div class="upper-part">
+                      <div class="left-part1">
+                        <h5>{{activeCategory.name}}</h5>
+                      </div>
+                      <div class="right-part1">
+                        <a><span>View All {{activeCategory.name}}</span> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="lower-part">
+                          <h5>Most Popular</h5>
+                          
+                          <ng-container *ngIf="activeCategory.sub_category && activeCategory.sub_category.length">
+                          
+                              <a *ngFor="let subCat of activeCategory.sub_category" class="item d-block blue-color-hover">{{subCat.name}}</a>
+                    
+                          </ng-container>
+                          
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="lower-part">
+                          <h5>Top Brands</h5>
+                          
+                          <ng-container *ngIf="activeCategory.category_brands && activeCategory.category_brands.length">
+                              <a *ngFor="let brand of activeCategory.category_brands" class="d-block blue-color-hover item">{{brand.name}}</a>
+                          </ng-container>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </li>
+
+
+            <li *ngFor="let item of navData; index as i" class="nav-item mini-categories" (mouseover)="showOpacity()" (mouseleave)="hideOpacity()">
+            <ng-container *ngIf="i < 8">
+              <a class="nav-link" href="#">{{item.name}}</a>
+
+              <div class="hover-layer">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <div class="categories">
+                          <h5>CATEGORIES</h5>
+                          
+                          <ng-container *ngIf="item.sub_category && item.sub_category.length">  
+                            <p *ngFor="let subCat of item.sub_category" class="p-0 m-0">
+                              <a class="d-inline-block" >{{subCat.name}}</a>
+                            </p>
+                          </ng-container>
+                          
+  
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="top-brands">
+                          <h5>TOP BRANDS</h5>
+                          <div *ngIf="item.category_brands && item.category_brands.length" class="row">
+                            <div *ngFor="let brand of item.category_brands" class="col-lg-4 mb-2">
+                              <div class="brand-img">
+                                <img [src]="'http://' + brand.img" alt="top-brands">
+                                <div class="overlayer"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <ng-container *ngIf="item.special_images && item.special_images.length">  
+                        <div class="col-lg-4">
+                          <div class="img-left">
+                            <a>
+                              <img [src]="'http://' + item.special_images[0].img" alt="left-img">
+                              <div class="over-layer">
+
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+
+                        <div *ngIf="item.special_images[1]" class="col-lg-2">
+                          <div class="img-right">
+                            <a>
+                              <img [src]="'http://' + item.special_images[1].img" alt="right-img">
+
+                              <div class="over-layer">
+
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </ng-container>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+
+
+    <!-- semi black overlayer -->
+    <div class="opacity-overlayer" *ngIf="navOpacity"></div>
+
+    <!--  small search -->
+    <div class="small-screen-search" *ngIf="openSearch">
+      <form class="search-form">
+        <input type="text" class="shewow-form-control"
+               placeholder="{{isArabic?'انت بتدور علي ايه؟' : 'What are you looking for?'}}">
+        <i class="fa fa-search" aria-hidden="true" id="small-s"></i>
+      </form>
+    </div>
+  </div>
+
+
+  <!--     small screen sidebar -->
+  <div id="offcanvas-slide" uk-offcanvas="overlay: true;">
+    <div class="uk-offcanvas-bar">
+      <div class="side-bar">
+        <div class="side-header">
+          <div class="close-part">
+            <div class="close-icon">
+              <!--                        <img src="assets/signs.png" alt="close">-->
+              <span class="uk-offcanvas-close text-muted" uk-close></span>
+            </div>
+            <div class="logo">
+              <img src="assets/logo.svg" alt="logo">
+            </div>
+          </div>
+          <div class="welcome-part">
+            <h4>Hi, We Are SheWow</h4>
+          </div>
+        </div>
+        
+        <div class="icons-part">
+          <a class="box">
+            <div class="box-upper-part">
+              <img src="assets/home.png" alt="home">
+            </div>
+            <div class="box-lower-part">
+              <small>Home</small>
+            </div>
+          </a>
+          <a class="box">
+            <div class="box-upper-part">
+              <img src="assets/signin.png" alt="signin">
+            </div>
+            <div class="box-lower-part">
+              <small>Sign In</small>
+            </div>
+          </a>
+          <a class="box">
+            <div class="box-upper-part">
+              <img src="assets/signup.png" alt="signup">
+            </div>
+            <div class="box-lower-part">
+              <small>Sign Up</small>
+            </div>
+          </a>
+          <a class="box">
+            <div class="box-upper-part">
+              <img src="assets/cart.png" alt="cart">
+            </div>
+            <div class="box-lower-part">
+              <small>Cart</small>
+            </div>
+          </a>
+        </div>
+
+        <div class="categories-part">
+          <div>
+            <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+              <li class="uk-active"><a>All Categories</a></li>
+              <li class="uk-parent">
+                <a class="sub-cat">Electronics & Mobile</a>
+                <ul class="uk-nav-sub">
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                </ul>
+              </li>
+              <li class="uk-parent">
+                <a class="sub-cat">Electronics & Mobile</a>
+                <ul class="uk-nav-sub">
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                </ul>
+              </li>
+              <li class="uk-parent">
+                <a class="sub-cat">Electronics & Mobile</a>
+                <ul class="uk-nav-sub">
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                </ul>
+              </li>
+              <li class="uk-parent">
+                <a class="sub-cat">Electronics & Mobile</a>
+                <ul class="uk-nav-sub">
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                </ul>
+              </li>
+              <li class="uk-parent">
+                <a class="sub-cat">Electronics & Mobile</a>
+                <ul class="uk-nav-sub">
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                </ul>
+              </li>
+              <li class="uk-parent">
+                <a class="sub-cat">Electronics & Mobile</a>
+                <ul class="uk-nav-sub">
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                </ul>
+              </li>
+              <li class="uk-parent">
+                <a class="sub-cat">Electronics & Mobile</a>
+                <ul class="uk-nav-sub">
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                </ul>
+              </li>
+              <li class="uk-parent">
+                <a class="sub-cat">Electronics & Mobile</a>
+                <ul class="uk-nav-sub">
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                </ul>
+              </li>
+              <li class="uk-parent">
+                <a class="sub-cat">Electronics & Mobile</a>
+                <ul class="uk-nav-sub">
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                  <li><a href="#">Sub item</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lang-contact">
+          <div class="country">
+            <div class="country-part">
+              <div class="network">
+                <i class="fas fa-globe" id="net-icon"></i>
+              </div>
+              <div class="net-caption">
+                <span>Country</span>
+              </div>
+            </div>
+            <div class="flag-part">
+              <span>Iraq</span>
+              <img src="assets/iraqflag.png" alt="iraqflag">
+            </div>
+          </div>
+          <div class="language" (click)="toggleDirection()">
+            <div class="language-part">
+              <div class="flag">
+                <i class="far fa-flag" id="flag-icon"></i>
+              </div>
+              <div class="language-caption">
+                <span>Language</span>
+              </div>
+            </div>
+            <div class="caption-part">
+              <span>{{isArabic ? 'English' : 'العراقيه'}}</span>
+            </div>
+          </div>
+          <div class="help">
+            <div class="row">
+              <div class="col-6">
+                <div class="help-user">
+                            <span class="help-left">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" id="exc-icon"></i>
+                            </span>
+                  <a class="help-right">
+                    Help
+                  </a>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="contact-us">
+                                <span class="contact-left">
+                                    <i class="fa fa-phone" aria-hidden="true" id="phone-icon"></i>
+                                </span>
+                  <a class="contact-right">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</nav>

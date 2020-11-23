@@ -1,0 +1,71 @@
+<app-navbar [middleNavOnly]="true"></app-navbar>
+
+<section class="container">
+    <div class="d-flex mt-20">
+        <div class="mb-30">
+            <div class="name">
+                Hala Karim!
+            </div>
+
+            <div class="">
+                <button class="signout btn ph-0 mh-0">
+                    Sign Out
+                </button>
+            </div>
+
+            <hr class="mb-10">
+
+            <ul class="navbar-nav">
+                    <ul class="p-0">
+                      <li routerLinkActive = "active" class="profile active">
+                        <a routerLink="settings/orders" class="d-block profile-item" href="">
+                          <i class="fas mh-10 fa-list-alt"></i>
+                          Orders 
+                        </a>
+                      </li>
+                      
+                      <li routerLinkActive = "active" class="profile">
+                        <a class="d-block profile-item" href="">
+                          <i class="fas mh-10 fa-address-card"></i>
+                          Address 
+                        </a>
+                      </li>
+                      
+                      <li routerLinkActive = "active" class="profile">
+                        <a class="d-block profile-item" href="">
+                          <i class="fas mh-10 fa-credit-card"></i>
+                          Payment 
+                        </a>
+                      </li>
+  
+                       
+                      <li routerLinkActive = "active" class="profile">
+                        <a class="d-block profile-item" href="">
+                          <i class="fas mh-10 fa-undo-alt"></i>
+                          Returns 
+                        </a>
+                      </li>
+                      
+                      <!-- <i class="far fa-user"></i> -->
+  
+                      <li routerLinkActive = "active" class="profile">
+                        <a class="d-block profile-item" href="">
+                          <i class="far mh-10 fa-user"></i>
+                          Profile 
+                        </a>
+                      </li>
+
+                    </ul>
+              </ul>
+
+        </div>
+
+
+        <div class="col">
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+
+</section>
+

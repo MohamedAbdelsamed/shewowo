@@ -1,0 +1,21 @@
+@import "../../../assets/variables";
+
+.top-slider {
+  ul {
+    li {
+      background-color: white;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .top-slider {
+    .slider-btn {
+      display: none;
+    }
+  }
+
+}

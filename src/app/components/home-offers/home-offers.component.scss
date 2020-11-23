@@ -1,0 +1,15 @@
+.header {
+  margin-bottom: 1rem;
+}
+.content {
+  padding: 0 3rem;
+  .offer {
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .content {
+    padding: 0 1rem;
+  }
+}

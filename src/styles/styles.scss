@@ -1,0 +1,125 @@
+// English font
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700&display=swap');
+
+// Arabic font
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+// bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "framework";
+
+// RFS
+@import "../assets/RFS";
+
+// variables
+@import "../assets/variables";
+
+
+/* UIKit */
+@import "variables-theme.scss";
+@import "mixins-theme.scss";
+@import "uikit-theme.scss";
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+body:lang(ar) {
+  font-family: 'Cairo', sans-serif;
+
+  h1, h2, h3, h4, h5, h6, p, span {
+    font-family: 'Cairo', sans-serif;
+  }
+}
+
+.main-background{
+  // background-color: semiGray;
+}
+
+body:lang(en) {
+  font-family: 'Work Sans', sans-serif;
+  background-color: $bodyColor;
+  h1, h2, h3, h4, h5, h6, p, span {
+    font-family: 'Work Sans', sans-serif;
+  }
+}
+
+body {
+  //overflow-x: hidden;
+}
+
+* {
+  text-align: start;
+}
+
+.btn
+{
+  box-shadow: none !important;
+}
+
+.uk-dotnav {
+  li {
+    a {
+      background-color: $bodyColor !important;
+      border: none !important;
+      width: 25px !important;
+      border-radius: 5px !important;
+      height: 5px !important;
+    }
+  }
+
+  .uk-active {
+    a {
+      background-color: $mainColor !important;
+    }
+  }
+}
+
+.slider-btn {
+  a {
+    color: rgba(black, 0.4) !important;
+    background-color: rgba(white, 0.5);
+    padding: 1rem 1.2rem;
+    transition: 0.2s;
+  }
+  &:hover {
+    a {
+      background-color: rgba(white, 0.8);
+    }
+  }
+}
+
+.uk-offcanvas-close
+{
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+}
+
+.black-color{
+  color: $blackColor;
+}
+
+.text-muted {
+  color: $text-muted;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spinner-border{
+  border: 0.2em solid currentColor;
+  border-right-color: transparent;
+}
+
+
+
+.main{
+  background-color: #F7F7FA;
+}
+
+.blue-color-hover{
+  transition: .2s;
+  &:hover{
+    color: $blue !important;
+  }
+}

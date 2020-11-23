@@ -1,0 +1,113 @@
+@import "../../../assets/variables";
+
+.global {
+  padding: 2rem 0;
+
+  .category-slider-container {
+    max-width: 95%;
+    margin: auto;
+    padding: 0 1rem;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      .header-text {
+        font-weight: 600;
+      }
+
+      .shop-now {
+        background-color: white;
+        border: 1px solid $blue;
+        color: $blue;
+        padding: 0.2rem 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+
+    .slider {
+
+      li {
+        cursor: pointer;
+      }
+
+      .uk-card-media-top {
+        text-align: center;
+        min-height: 247px;
+      }
+
+      .uk-card-body {
+        padding: 0.5rem;
+
+        .description {
+          line-height: 13px;
+
+          span {
+            vertical-align: baseline;
+            font-size: 0.6em !important;
+            color: #000;
+          }
+        }
+
+        .price {
+          padding: 0.3rem 0 0 0;
+
+          span {
+            strong {
+              font-size: 1.3em !important;
+            }
+
+            .old-price {
+              padding-left: 5px;
+              color: $text-muted-2;
+              text-decoration: line-through;
+            }
+          }
+        }
+
+        .discount {
+          .discount-value {
+            color: rgb(56, 174, 4);
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 4px 5px;
+            font-size: 0.5em !important;
+            background-color: rgba(56, 174, 4, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+.ar {
+
+}
+
+.en {
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .global {
+    .category-slider-container {
+      max-width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+
+  .slider-btn {
+    display: none;
+  }
+
+  .uk-dotnav {
+    display: none;
+  }
+}
+
