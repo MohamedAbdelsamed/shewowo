@@ -10,6 +10,12 @@ import { VendorSignupComponent } from './components/vendor-signup/vendor-signup.
 import { LoginComponent } from './routes/auth/login/login.component';
 import { HomeProfileComponent } from './components/home-profile/home-profile.component';
 import { RouterComponent } from './components/router/router.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { AddressComponent } from './components/address/address.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { ReturnComponent } from './components/return/return.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 const routes: Routes = [
@@ -23,8 +29,11 @@ const routes: Routes = [
   
   {path: 'settings', component: RouterComponent , children:[
     {path: '', redirectTo:'orders' , pathMatch : 'full'},
-    {path: 'orders', component: HomeProfileComponent},
-    
+    {path: 'orders', component: OrdersComponent},
+    {path: 'address', component: AddressComponent},
+    {path: 'payment', component: PaymentComponent},
+    {path: 'return', component: ReturnComponent},
+    {path: 'profile', component: ProfileComponent},
   ]},
 
 

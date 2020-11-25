@@ -31,10 +31,16 @@ export class NavbarComponent implements OnInit {
   activeCategory = [];
   activeIndex = 0;
 
-  constructor(private language: LanguageService, private translate: TranslateService, private api: ApiService,private route: ActivatedRoute) {
+  constructor( private language: LanguageService,
+               private translate: TranslateService, 
+               private api: ApiService,
+               private route: ActivatedRoute,
+               private router: Router
+               ) {
   }
 
   ngOnInit() {
+    this.router.url
     // this.direction = this.language.direction;
     this.lang = this.language.language;
     this.translate.setDefaultLang(this.lang);
@@ -99,6 +105,11 @@ export class NavbarComponent implements OnInit {
 
   toggleShadow() {
     this.navOpacity = !this.navOpacity;
+  }
+
+  rot(settings:string){
+    let link = settings;
+    this.router.navigate([link])
   }
 }
 

@@ -32,6 +32,12 @@ import { ReviewProductComponent } from './components/review-product/review-produ
 import { HomeProfileComponent } from './components/home-profile/home-profile.component';
 import { RouterComponentComponent } from './router-component/router-component.component';
 import { RouterComponent } from './components/router/router.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { AddressComponent } from './components/address/address.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { ReturnComponent } from './components/return/return.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -54,6 +60,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductFiltirationComponent,
     CategoryComponent,
     SignupComponent,
+    OrdersComponent,
+    AddressComponent,
+    PaymentComponent,
+    ReturnComponent,
+    ProfileComponent,
     MainComponent,
     VendorSignupComponent,
     AlertDialogComponent,
@@ -61,7 +72,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReviewProductComponent,
     HomeProfileComponent,
     RouterComponentComponent,
-    RouterComponent
+    RouterComponent,
+    
   ],
   imports: [
   BrowserModule,

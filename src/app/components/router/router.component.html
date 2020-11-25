@@ -17,22 +17,22 @@
 
             <ul class="navbar-nav">
                     <ul class="p-0">
-                      <li routerLinkActive = "active" class="profile active">
-                        <a routerLink="settings/orders" class="d-block profile-item" href="">
+                      <li routerLinkActive = "active" class="profile active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="orders" class="d-block profile-item" >
                           <i class="fas mh-10 fa-list-alt"></i>
                           Orders 
                         </a>
                       </li>
                       
                       <li routerLinkActive = "active" class="profile">
-                        <a class="d-block profile-item" href="">
+                        <a class="d-block profile-item" routerLink="address">
                           <i class="fas mh-10 fa-address-card"></i>
                           Address 
                         </a>
                       </li>
                       
                       <li routerLinkActive = "active" class="profile">
-                        <a class="d-block profile-item" href="">
+                        <a class="d-block profile-item" routerLink="payment">
                           <i class="fas mh-10 fa-credit-card"></i>
                           Payment 
                         </a>
@@ -40,14 +40,12 @@
   
                        
                       <li routerLinkActive = "active" class="profile">
-                        <a class="d-block profile-item" href="">
+                        <a class="d-block profile-item" routerLink="return">
                           <i class="fas mh-10 fa-undo-alt"></i>
                           Returns 
                         </a>
                       </li>
-                      
-                      <!-- <i class="far fa-user"></i> -->
-  
+                  
                       <li routerLinkActive = "active" class="profile">
                         <a class="d-block profile-item" href="">
                           <i class="far mh-10 fa-user"></i>
@@ -56,7 +54,7 @@
                       </li>
 
                     </ul>
-              </ul>
+            </ul>
 
         </div>
 

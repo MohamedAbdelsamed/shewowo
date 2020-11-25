@@ -1,0 +1,63 @@
+<div class="wrapper-content">
+    <h3>profile</h3>
+    <p>Manage your profile details</p>
+    <div class="card">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>first Name</label>
+                            <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>last Name</label>
+                            <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>last Name</label><br>
+                            <select class="form-control">
+                                <option>English</option>
+                                <option>العربية</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-right button-wrapper">
+                        <button type="submit"  value="save">save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" [(ngModel)]="email">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>password</label>
+                            <input type="password" class="form-control" name="password" [(ngModel)]="password">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right button-wrapper">
+                    <button type="submit" value="save">Change Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

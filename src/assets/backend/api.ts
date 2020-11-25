@@ -1,8 +1,9 @@
-export const url = 'https://wow.ieeeshasb.org/'; 
+export const url = 'https://wow.ieeeshasb.org/';
+
 const auth = 'api/auth/'; 
 const mobile = 'api/mobile/'; 
 const dashboard = 'api/dashboard/'; 
-const enduser =  'api/enduser/'
+const enduser =  'api/enduser/';
 const lang = localStorage.getItem('lang') || 0;
 
 // post
