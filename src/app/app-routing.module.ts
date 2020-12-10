@@ -15,6 +15,7 @@ import { AddressComponent } from './components/address/address.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { ReturnComponent } from './components/return/return.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CaretComponent } from './components/caret/caret.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'productfilter', component: ProductFiltirationComponent},
   {path: 'product', component: ProductComponent},
   {path: 'category', component: CategoryComponent},
+  {path: 'caret', component: CaretComponent},
   ]},
   
   
@@ -40,6 +42,7 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent},
 
+  
   {path: 'vendor_signUp', component: VendorSignupComponent}
 ];
 

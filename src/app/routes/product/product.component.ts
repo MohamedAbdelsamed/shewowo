@@ -11,6 +11,7 @@ declare const $: any;
 export class ProductComponent implements OnInit {
   isArabic: boolean;
   document = document;
+  isOpen: boolean = false;
 
   arr = [
     {number: 1, img: '../../../assets/product-preview.jpg'},
@@ -36,10 +37,8 @@ export class ProductComponent implements OnInit {
   goTo(index) {
     Uikit.slider('#slider').show(index);
   }
-  //
-  // scale(e) {
-  //   const amountMovedX = (e.pageX * + 0.8);
-  //   const amountMovedY = (e.pageY * + 0.8);
-  //   $('.img').css('transform-origin', amountMovedX + 'px ' + amountMovedY + 'px');
-  // }
+
+  toggleSideNav(){
+      this.isOpen = !this.isOpen;
+  }
 }

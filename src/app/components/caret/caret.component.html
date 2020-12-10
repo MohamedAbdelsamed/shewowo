@@ -1,0 +1,47 @@
+<section class="global" [ngClass]="{'ar': isArabic, 'en': !isArabic}">
+    <div class="wrapper">
+        <div class="custom-container">
+            <div class="container-fluid pt-4">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="top-details">
+                            <div>
+                                <strong>Caret</strong>
+                                <p>(5 items)</p>
+                            </div>
+                            <div>
+                                <strong>Caret</strong>
+                                <p>(5 items)</p>
+                            </div>
+                        </div>
+                        <div class="advertise">
+                            <div class="top-details">
+                                <div>
+                                    <i class="fas fa-gift fa-lg"></i>
+                                    <p>shop to get gift from Noon</p>
+                                </div>
+                                <div>
+                                    <a routerLink="">learnMore</a>
+                                </div>
+                            </div> 
+                            <app-top-slider [images]='images'></app-top-slider>
+                        </div>
+                        <div class="product">
+                            <div class="media">
+                                <img class="mr-3" src="https://a.nooncdn.com/t_desktop-thumbnail-v1/v1605814275/N38532173A_1.jpg" width='120' height="80" alt="productImage">
+                                <div class="media-body">
+                                  <h5 class="mt-0">Media heading </h5>
+                                  <p>shop to get gift from Noon shop to get gift from Noon shop to get gift from Noon</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>

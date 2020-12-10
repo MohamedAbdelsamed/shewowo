@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  images: any[];
   isArabic: boolean;
   constructor() { }
 
   ngOnInit() {
+    this.images = ['../../../assets/ar_banner-01-.png','../../../assets/ar_banner-01-.png','../../../assets/ar_banner-01-.png']
     if (window.localStorage.getItem('lang') === 'ar') {
       this.isArabic = true;
     } else {

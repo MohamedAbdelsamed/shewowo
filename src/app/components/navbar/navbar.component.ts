@@ -107,9 +107,6 @@ export class NavbarComponent implements OnInit {
     this.navOpacity = !this.navOpacity;
   }
 
-  rot(settings:string){
-    let link = settings;
-    this.router.navigate([link])
-  }
+
 }
 

@@ -69,30 +69,30 @@
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropDown">
                   <ul class="p-0">
-                    <li class="profile-dropdown">
-                      <a routerLink="settings/orders" (click)="rot('settings/orders')" class="d-block profile-dropdown-item" >
+                    <li routerLink="/settings/orders" class="profile-dropdown">
+                      <a   class="d-block profile-dropdown-item" >
                         <i class="fas fa-list-alt"></i>
                         Orders 
                       </a>
                     </li>
                     
-                    <li class="profile-dropdown">
-                      <a class="d-block profile-dropdown-item" (click)="rot('settings/address')" routerLink="settings/address">
+                    <li routerLink="/settings/address" class="profile-dropdown">
+                      <a class="d-block profile-dropdown-item" >
                         <i class="fas fa-address-card"></i>
                         Address 
                       </a>
                     </li>
                     
-                    <li class="profile-dropdown">
-                      <a class="d-block profile-dropdown-item" (click)="rot('settings/payment')" routerLink="settings/payment">
+                    <li  routerLink="/settings/payment" class="profile-dropdown">
+                      <a class="d-block profile-dropdown-item" >
                         <i class="fas fa-credit-card"></i>
                         Payment 
                       </a>
                     </li>
 
                     
-                    <li class="profile-dropdown">
-                      <a class="d-block profile-dropdown-item" routerLink="settings/return" (click)="rot('settings/return')">
+                    <li routerLink="/settings/return" class="profile-dropdown">
+                      <a class="d-block profile-dropdown-item"  >
                         <i class="fas fa-undo-alt"></i>
                         Returns 
                       </a>
@@ -100,7 +100,7 @@
 
 
                     <li class="profile-dropdown">
-                      <a class="d-block profile-dropdown-item" routerLink="settings/profile">
+                      <a class="d-block profile-dropdown-item" routerLink="/settings/profile" >
                         <i class="far fa-user"></i>
                         Profile 
                       </a>
@@ -146,7 +146,7 @@
           <div class="seprator">
           </div>
           <a class="cart">
-            <button class="btn uk-padding-remove">
+            <button class="btn uk-padding-remove" routerLink="/caret">
               <a>Cart</a>
               <i class="fas fa-shopping-cart" id="cart"></i>
             </button>

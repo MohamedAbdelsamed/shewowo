@@ -1,4 +1,32 @@
 <section class="global" [ngClass]="{'ar': isArabic, 'en': !isArabic}">
+
+  <div class="sidenav-wrapper" [style.width]="isOpen? '100%': '0'" (click)="toggleSideNav()">
+    <div class="sidenav" [style.right]="isOpen? '0': '-100%'" (click)="$event.stopPropagation()">
+      <div class="cart-btn flex-grow-1 text-center">
+        <div class="media">
+          <img class="mr-3" src="https://a.nooncdn.com/t_desktop-thumbnail-v1/v1605814275/N38532173A_1.jpg" width='120' height="80" alt="productImage">
+          <div class="media-body">
+            <p class="mt-0">Media heading Cras sit amet nibh libero</p>
+            <div>
+              Added to cart<img src="https://a.nooncdn.com/s/app/com/noon/icons/checkbox_checked.svg" alt="atc">
+            </div>
+          </div>
+        </div>
+        <div class="details">
+          <span>Cart Total </span><span> EGP 6930.00 </span>
+        </div>
+        <div class="caret-btn">
+          <button class="btn btn-block Checkout"><span>Checkout</span></button>
+          <button class="btn btn-block Continue" (click)="toggleSideNav()"><span>Continue Shopping</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
   <div class="wrapper">
     <div class="custom-container">
       <div class="container-fluid pt-4">
@@ -92,7 +120,7 @@
                   </div>
                 </div>
               </div>
-
+             
               <div class="quantity">
                 <div class="header">
                   <span class="text">Quantity</span>
@@ -108,7 +136,7 @@
                     </select>
                   </div>
                   <div class="cart-btn flex-grow-1 text-center">
-                    <button class="btn btn-block"><a>Add To Cart</a></button>
+                    <button class="btn btn-block" (click)="toggleSideNav()"><a>Add To Cart</a></button>
                   </div>
                   <div class="wish-list">
                     <div class="circle">

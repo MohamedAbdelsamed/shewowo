@@ -1,3 +1,81 @@
 .button-wrapper{
     width: 100%;
 }
+.wrapper-content{
+    margin-left: 75px;
+    width: 100%;
+}
+.wrapper-content p{
+    color: rgb(126, 133, 155);
+}
+.wrapper-content h3{
+    font-size: 1.666rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.card{
+    box-shadow: rgba(173, 193, 207, 0.35) 0px 1px 5px 2px;
+    border-radius: 3px;
+    background: rgb(255, 255, 255);
+    margin-bottom: 15px;
+    border: 0;
+}
+.card-header{
+    font-size: 1.08333rem;
+    font-weight: 600;
+    padding: 10px 15px;
+    background: rgb(241, 243, 250);
+    border: 0;
+}
+.card-header span{
+    font-size: 1.08333rem !important;
+    font-weight: 600;
+    color: rgb(64, 69, 83);
+}
+.card label{
+    color: rgb(126, 133, 155);
+    font-size: 1rem;
+    max-width: 100%;
+    pointer-events: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: all 0.2s ease 0s;
+    margin-bottom: 0;
+}
+.card .form-control{
+    border: 0;
+    color: rgb(64, 69, 83);
+    border-bottom: 1px solid rgb(226, 229, 241);
+    padding: 0;
+}
+.card .form-control:focus{
+    box-shadow: none;
+}
+.card .btn{
+    transition: all 0.25s ease-in 0s;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.11) 0px 1px 1px 0px;
+    padding: 3px 14px;
+    width: 190px;
+    color: rgb(64, 69, 83);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(226, 229, 241);
+}
+.card .btn span{
+    font-size: 1.08333rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    transition: opacity 0.25s ease-in-out 0s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+
+}
