@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {  getNavDataUrl } from './../../assets/backend/api';
+import {  getAllHomeSlidersUrl, getHomeDataUrl, getNavDataUrl } from './../../assets/backend/api';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -12,5 +12,13 @@ export class ApiService {
 
   getNavData(){
     return this.http.get(getNavDataUrl).pipe(map(res=> res['data']))
+  }
+
+  getHomeData(){
+    return this.http.get(getHomeDataUrl).pipe(map(res=> res['data']))
+  }
+
+  getHomeSlider(){
+    return this.http.get(getAllHomeSlidersUrl).pipe(map(res=> res['data']))
   }
 }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { baseUrl } from 'src/assets/backend/api';
 
 @Component({
   selector: 'app-top-slider',
@@ -7,8 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TopSliderComponent implements OnInit {
   @Input('images') images:any[];
+  @Input('sliders') sliders: any[];
+  url = baseUrl;
+  
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      console.log(this.sliders);
+      
+    }, 5000);
   }
 }

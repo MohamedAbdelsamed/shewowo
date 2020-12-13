@@ -4,7 +4,7 @@ import {TranslateService} from '@ngx-translate/core';
 import Uikit from 'uikit';
 import {ActivatedRoute, Route, Router} from '@angular/router';
 import { ApiService } from './../../services/api.service';
-import { url } from './../../../assets/backend/api';
+import { baseUrl } from './../../../assets/backend/api';
 
 declare const $: any;
 
@@ -17,7 +17,7 @@ declare const $: any;
 
 export class NavbarComponent implements OnInit {
   // variables
-  url = url;
+  url = baseUrl;
   
   @Input('middleNavOnly') middleNavOnly:boolean = true;
   

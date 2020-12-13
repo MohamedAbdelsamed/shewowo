@@ -3,8 +3,8 @@
 
   <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
     <ul class="uk-slideshow-items">
-      <li *ngFor="let image of images">
-        <a routerLink="/productfilter"><img [src]='image' [alt]="image"></a>
+      <li *ngFor="let slider of sliders">
+        <a routerLink="/productfilter"><img [src]="url + 'public/home_sliders/' + slider.imgae"></a>
       </li>
     </ul>
 
