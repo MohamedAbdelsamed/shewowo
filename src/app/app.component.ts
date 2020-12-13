@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {LanguageService} from './services/language.service';
 import {TranslateService} from '@ngx-translate/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,10 @@ export class AppComponent implements OnInit {
   lang: string;
   url: string;
 
-  constructor(private language: LanguageService, private translate: TranslateService) {}
-
+  constructor(private language: LanguageService, private translate: TranslateService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
+   
     this.direction = this.language.direction;
     this.lang = this.language.language;
     this.translate.setDefaultLang(this.lang);

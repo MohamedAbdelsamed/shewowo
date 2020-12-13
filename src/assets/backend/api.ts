@@ -28,7 +28,6 @@ export const getSpecificMainCategoryNamesUrl = baseUrl + dashboard + 'specific_c
 // for special category
 export const getSpecialCategoryUrl = baseUrl + dashboard + 'specific_category/'
 export const getBestBrandsUrl = baseUrl + dashboard + 'all_category_brands/'
-export const getSubCategoriesUrl = baseUrl + dashboard + 'all_sub_category_names/'
 export const getCategorySlidersUrl = baseUrl + dashboard + 'all_category_sliders/'
 export const getCategorySpecialImagesUrl = baseUrl + dashboard + 'category_special_imgs/'
 export const getSubCategoriesOfSubCategoryUrl = baseUrl + dashboard + 'all_sub_ofsub_category_names/'
@@ -58,5 +57,7 @@ export const loginUpUrl = baseUrl + auth + 'login'
 // get 
 export const getNavDataUrl = baseUrl + enduser + 'navbarData/' +lang
 export const getHomeDataUrl = baseUrl + enduser + 'home/data/' +lang
+export const getSpecificProductUrl = baseUrl + enduser + 'item/'
+export const getSubCategoriesUrl = baseUrl + enduser + 'category/subs/'
 
 

@@ -5,6 +5,7 @@ import Uikit from 'uikit';
 import {ActivatedRoute, Route, Router} from '@angular/router';
 import { ApiService } from './../../services/api.service';
 import { baseUrl } from './../../../assets/backend/api';
+import { StoreService } from 'src/app/services/store.service';
 
 declare const $: any;
 
@@ -27,13 +28,15 @@ export class NavbarComponent implements OnInit {
   openSearch = false;
   navOpacity = false;
   navData = [];
-
   activeCategory = [];
+  subCategories = [];
+
   activeIndex = 0;
 
   constructor( private language: LanguageService,
                private translate: TranslateService, 
                private api: ApiService,
+               private store: StoreService,
                private route: ActivatedRoute,
                private router: Router
                ) {
@@ -41,7 +44,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.router.url
-    // this.direction = this.language.direction;
     this.lang = this.language.language;
     this.translate.setDefaultLang(this.lang);
     this.lang === 'ar' ? this.isArabic = true : this.isArabic = false;
@@ -53,14 +55,15 @@ export class NavbarComponent implements OnInit {
 
   private getNavData(){
     this.api .getNavData().subscribe(res=>{
-      this.navData = res;
-      this.activeCategory = this.navData[0];
-      
+      this.navData = res;      
+      this.activeCategory = this.navData[0];      
+      this.store.getSubCategory$.next(this.activeCategory['id']);
     })
   }
 
+  
+
   toggleDirection() {
-    // console.log(this.route['_routerState'].snapshot.url);
     this.language.toggleLang();
     this.direction = this.language.direction;
     this.switchLang();
@@ -71,7 +74,6 @@ export class NavbarComponent implements OnInit {
       this.language.language = 'en';
       this.lang = this.language.language;
       this.translate.use(this.lang);
-      console.log(this.lang);
     } else {
       this.language.language = 'ar';
       this.lang = this.language.language;
