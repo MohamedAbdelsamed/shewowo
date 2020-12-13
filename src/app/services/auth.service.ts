@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { signUpUrl, vendorSignUpUrl } from './../../assets/backend/api';
+import { login, signUpUrl, vendorSignUpUrl } from './../../assets/backend/api';
 import {map} from 'rxjs/operators'
 
 @Injectable({
@@ -20,6 +20,6 @@ export class AuthService {
 
   
   login(form){
-    return this.http.post(signUpUrl, form).pipe(map((res:any)=>res.data));
+    return this.http.post(login, form).pipe(map((res:any)=>res.data));
   }
 }

@@ -49,7 +49,7 @@ export const updateMainCategoryUrl = url + dashboard + 'update_category/'
 // aut 
 export const vendorSignUpUrl = url + auth + 'register_vendor'
 export const signUpUrl = url + auth + 'register'
-export const loginUpUrl = url + auth + 'login'
+export const login = url + auth + 'login'
 
 
 // get 
