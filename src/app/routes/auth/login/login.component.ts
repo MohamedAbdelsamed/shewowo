@@ -25,6 +25,10 @@ export class LoginComponent implements OnInit {
 
     this.auth.login(form).subscribe(res=>{
       this.isLoading = false;
+      
+      
+      localStorage.setItem('user', JSON.stringify(res));
+
       this.message = `Successfully Login`;
       this.dialog.open(AlertDialogComponent,{
         data: {message:this.message}

@@ -8,7 +8,7 @@ import { LoginComponent } from './routes/auth/login/login.component';
 import { RegisterComponent } from './routes/auth/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { TopSliderComponent } from './components/top-slider/top-slider.component';
@@ -38,6 +38,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { ReturnComponent } from './components/return/return.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CaretComponent } from './components/caret/caret.component';
+import { ApiInterceptorService } from './services/api-interceptor.service';
 
 
 
@@ -100,7 +101,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   entryComponents:[
     AlertDialogComponent
   ],
-  providers: [HttpClient, { provide: LocationStrategy, useClass: HashLocationStrategy }
+  providers: [
+    HttpClient, { provide: LocationStrategy, useClass: HashLocationStrategy },
+    {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptorService , multi: true}
+
   ],
   bootstrap: [AppComponent]
 })
