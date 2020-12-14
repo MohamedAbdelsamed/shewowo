@@ -13,10 +13,11 @@ export class AppComponent implements OnInit {
   lang: string;
   url: string;
 
-  constructor(private language: LanguageService, private translate: TranslateService) {}
+  constructor(private language: LanguageService, private translate: TranslateService, private toastr) {}
 
 
   ngOnInit(): void {
+
     this.direction = this.language.direction;
     this.lang = this.language.language;
     this.translate.setDefaultLang(this.lang);
