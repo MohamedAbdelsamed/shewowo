@@ -249,182 +249,21 @@
                 <!-- product items -->
                 <div class="product-items">
                     <div class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-5@l" uk-grid>
-                        <div>
-                        <div class="uk-card">
-                            <div class="uk-card-media-top">
-                                <img src="../../../assets/regina.jpg" alt="">
-                            </div>
-                            <div class="uk-card-body">
-                                <div class="description">
-                                    <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
-                                </div>
-                                <div class="price">
-                                    <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
-                                </div>
-                                <div class="discount">
-                                    <span class="discount-value">18% off</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        <div>
+
+                        <div *ngFor ="let product of products">
                             <div class="uk-card">
-                                <div class="uk-card-media-top">
+                                <div [routerLink]="'/product/' + product.id" class="hover uk-card-media-top">
                                     <img src="../../../assets/regina.jpg" alt="">
                                 </div>
                                 <div class="uk-card-body">
                                     <div class="description">
-                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
+                                        <span>{{product.description}} </span>
                                     </div>
                                     <div class="price">
-                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
+                                        <span>EGP <strong>{{product.sale}}</strong><span class="old-price">EGP {{product.price}}</span></span>
                                     </div>
                                     <div class="discount">
-                                        <span class="discount-value">18% off</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card">
-                                <div class="uk-card-media-top">
-                                    <img src="../../../assets/regina.jpg" alt="">
-                                </div>
-                                <div class="uk-card-body">
-                                    <div class="description">
-                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
-                                    </div>
-                                    <div class="price">
-                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
-                                    </div>
-                                    <div class="discount">
-                                        <span class="discount-value">18% off</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card">
-                                <div class="uk-card-media-top">
-                                    <img src="../../../assets/regina.jpg" alt="">
-                                </div>
-                                <div class="uk-card-body">
-                                    <div class="description">
-                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
-                                    </div>
-                                    <div class="price">
-                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
-                                    </div>
-                                    <div class="discount">
-                                        <span class="discount-value">18% off</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card">
-                                <div class="uk-card-media-top">
-                                    <img src="../../../assets/regina.jpg" alt="">
-                                </div>
-                                <div class="uk-card-body">
-                                    <div class="description">
-                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
-                                    </div>
-                                    <div class="price">
-                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
-                                    </div>
-                                    <div class="discount">
-                                        <span class="discount-value">18% off</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card">
-                                <div class="uk-card-media-top">
-                                    <img src="../../../assets/regina.jpg" alt="">
-                                </div>
-                                <div class="uk-card-body">
-                                    <div class="description">
-                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
-                                    </div>
-                                    <div class="price">
-                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
-                                    </div>
-                                    <div class="discount">
-                                        <span class="discount-value">18% off</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card">
-                                <div class="uk-card-media-top">
-                                    <img src="../../../assets/regina.jpg" alt="">
-                                </div>
-                                <div class="uk-card-body">
-                                    <div class="description">
-                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
-                                    </div>
-                                    <div class="price">
-                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
-                                    </div>
-                                    <div class="discount">
-                                        <span class="discount-value">18% off</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card">
-                                <div class="uk-card-media-top">
-                                    <img src="../../../assets/regina.jpg" alt="">
-                                </div>
-                                <div class="uk-card-body">
-                                    <div class="description">
-                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
-                                    </div>
-                                    <div class="price">
-                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
-                                    </div>
-                                    <div class="discount">
-                                        <span class="discount-value">18% off</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card">
-                                <div class="uk-card-media-top">
-                                    <img src="../../../assets/regina.jpg" alt="">
-                                </div>
-                                <div class="uk-card-body">
-                                    <div class="description">
-                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
-                                    </div>
-                                    <div class="price">
-                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
-                                    </div>
-                                    <div class="discount">
-                                        <span class="discount-value">18% off</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card">
-                                <div class="uk-card-media-top">
-                                    <img src="../../../assets/regina.jpg" alt="">
-                                </div>
-                                <div class="uk-card-body">
-                                    <div class="description">
-                                        <span>hp 15-da1044ne Laptop With 15.6-Inch Display, Core i7… </span>
-                                    </div>
-                                    <div class="price">
-                                        <span>EGP <strong>8499.00</strong><span class="old-price">EGP 1090.00</span></span>
-                                    </div>
-                                    <div class="discount">
-                                        <span class="discount-value">18% off</span>
+                                        <span class="discount-value">{{(product.sale  / product.price ) * 100 }}% off</span>
                                     </div>
                                 </div>
                             </div>

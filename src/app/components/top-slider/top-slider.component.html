@@ -4,8 +4,9 @@
   <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
     <ul class="uk-slideshow-items">
       <li *ngFor="let slider of sliders">
-        <a routerLink="/productfilter"><img [src]="url + 'public/home_sliders/' + slider.imgae"></a>
-      </li>
+        <a routerLink="/productfilter"><img [src]="'http://' + slider.img"></a>
+      </li>  
+      <!-- 'public/home_sliders/' + -->
     </ul>
 
     <span class="slider-btn">

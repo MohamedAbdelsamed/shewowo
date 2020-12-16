@@ -2,37 +2,29 @@
   <div class="wrapper">
     <div class="custom-container">
       <div class="content">
-          <app-top-slider [images]='images'></app-top-slider>
+          <app-top-slider [sliders]='images'></app-top-slider>
         <div class="sub-categories">
 <!--          first category -->
-            <header class="header">
-              <h4 class="header-text">Televisions</h4>
-            </header>
-          <div class="row category-row mb-3">
-            <div class="col-6 col-md-3 mb-3">
-              <div class="img-container">
-                <a><img src="https://k.nooncdn.com/cms/pages/20190612/d98511f1481a79ac002d9d0913c66df7/en_mb-cat-module-01.png" alt=""></a>
-              </div>
-            </div>
-            <div class="col-md-3 col-6 mb-3">
-              <div class="img-container">
-                <a><img src="https://k.nooncdn.com/cms/pages/20190612/d98511f1481a79ac002d9d0913c66df7/en_mb-cat-module-01.png" alt=""></a>
-              </div>
-            </div>
-            <div class="col-md-3 col-6 mb-3">
-              <div class="img-container">
-                <a><img src="https://k.nooncdn.com/cms/pages/20190612/d98511f1481a79ac002d9d0913c66df7/en_mb-cat-module-01.png" alt=""></a>
-              </div>
-            </div>
-            <div class="col-md-3 col-6 mb-3">
-              <div class="img-container">
-                <a><img src="https://k.nooncdn.com/cms/pages/20190612/d98511f1481a79ac002d9d0913c66df7/en_mb-cat-module-01.png" alt=""></a>
-              </div>
-            </div>
-          </div>
+          <ng-container *ngFor="let sub of subCategories">
+            <ng-container *ngIf="sub.sub_of_sub_category && sub.sub_of_sub_category.length">
+              <header class="header">
+                <h4 class="header-text">{{sub.name}}</h4>
+              </header>
 
+               <div class="row category-row mb-3">
+                  <div *ngFor="let sub_of_sub of sub.sub_of_sub_category" class="col-6 col-md-3 mb-3">
+                    <div class="img-container">
+                      <a [routerLink]="'/products/'+ sub.id ">
+                        <img [src]="'https://' +  sub_of_sub.img" alt= 'image not exsist'>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </ng-container>
+          </ng-container>
+           
 <!--          second category -->
-          <header class="header">
+          <!-- <header class="header">
             <h4 class="header-text">Laptops</h4>
           </header>
           <div class="row category-row">
@@ -56,10 +48,10 @@
                 <a><img src="https://k.nooncdn.com/cms/pages/20190612/d98511f1481a79ac002d9d0913c66df7/en_mb-cat-module-05.png" alt=""></a>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!--          third category -->
-          <header class="header">
+          <!-- <header class="header">
             <h4 class="header-text">Cameras</h4>
           </header>
           <div class="row category-row">
@@ -83,7 +75,7 @@
                 <a><img src="https://k.nooncdn.com/cms/pages/20190612/d98511f1481a79ac002d9d0913c66df7/en_mb-cat-module-09.png" alt=""></a>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
