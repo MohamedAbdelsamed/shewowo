@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {  getAllHomeSlidersUrl, getCategorySlidersUrl, getHomeDataUrl, getNavDataUrl, getSpecificMainCategoryNamesUrl, getSpecificProductUrl, getSubCategoriesUrl, getSubCategoryItemsUrl } from './../../assets/backend/api';
+import {  getAllHomeSlidersUrl, getBestBrandsUrl, getCategorySlidersUrl, getHomeDataUrl, getNavDataUrl, getSpecificMainCategoryNamesUrl, getSpecificProductUrl, getSubCategoriesUrl, getSubCategoryItemsUrl } from './../../assets/backend/api';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -42,6 +42,10 @@ export class ApiService {
     return this.http.get(getSubCategoryItemsUrl + id).pipe(map(res=> res['data']))
   }
 
+  getCategoryBrands(id){
+    return this.http.get(getBestBrandsUrl + id).pipe(map(res=> res['data']))
+  }
+  
 
 
 }

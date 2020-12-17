@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 import Uikit from 'uikit';
 @Component({
@@ -9,19 +10,23 @@ import Uikit from 'uikit';
 })
 export class ProductFiltirationComponent implements OnInit {
   isArabic: boolean;
-  subCatId;
+  catId;
   products = [];
 
+  brands$ = new Observable();
+
   crumbContainer = [
-    {title: 'Home'},
-    {title: 'electronics'},
-    {title: 'phones'},
-    {title: 'oppo'},
+    // {title: 'Home'},
+    // {title: 'electronics'},
+    // {title: 'phones'},
+    // {title: 'oppo'},
   ];
+
   constructor(private route: ActivatedRoute, private api: ApiService) { }
 
   ngOnInit() {
     this.getRoutes();
+    this.getCategoryBrands();
     if (window.localStorage.getItem('lang') === 'ar') {
       this.isArabic = true;
     } else {
@@ -33,18 +38,18 @@ export class ProductFiltirationComponent implements OnInit {
 
   private getRoutes(){
     this.route.paramMap.subscribe(res=>{
-      this.subCatId = res.get('id');
+      this.catId = res.get('id');
       this.getSubCatItems();
     })
   }
 
   private getSubCatItems(){
-    this.api.getSubCategoryItems(this.subCatId).subscribe((res:any)=>{
-
-    
+    this.api.getSubCategoryItems(this.catId).subscribe((res:any)=>{
       this.products = res.data;
-      console.log(this.products, 'koko');
     })
   }
 
+  private getCategoryBrands(){
+   this.brands$ = this.api.getCategoryBrands(this.catId);
+  }
 }

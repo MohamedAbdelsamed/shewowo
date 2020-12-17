@@ -55,7 +55,8 @@ export class NavbarComponent implements OnInit {
 
   private getNavData(){
     this.api .getNavData().subscribe(res=>{
-      this.navData = res;      
+      this.navData = res;
+      this.store.navData$.next(this.navData)
       this.activeCategory = this.navData[0];      
       this.store.getSubCategory$.next(this.activeCategory['id']);
     })

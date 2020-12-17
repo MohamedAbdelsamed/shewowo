@@ -45,8 +45,6 @@ export class CategoryComponent implements OnInit {
   private getCategoryData(){
     this.api.getSpecificCategory(this.id).subscribe(res=>{
       this.subCategories = res.sub_category;
-
-      console.log(res.sub_category, 'sub');
     })
   }
 

@@ -2,9 +2,18 @@
     <div class="shewow-container">
         <!--  bread crump  -->
         <div class="bread-crump-part">
-            <a *ngFor="let crumb of crumbContainer; let i = index">{{crumb.title}} <i
-                    *ngIf="i === crumbContainer.length - 1" class="fa fa-angle-right wow-right"
-                    aria-hidden="true"></i></a>
+            <ng-container *ngFor="let crumb of crumbContainer; let i = index; last as last">
+                <a>{{crumb.title}} 
+                    <i *ngIf="i === crumbContainer.length - 1" class="fa fa-angle-right wow-right"
+                        aria-hidden="true">
+                    </i>
+                </a>
+
+               <img *ngIf="!last" src="https://a.nooncdn.com/s/app/com/noon/images/chevron_right.svg" 
+                style="width: 12px;
+               height: 8px;">
+            </ng-container>
+         
         </div>
         <!-- mobile-filter-left-part -->
         <div class="row">
@@ -40,7 +49,8 @@
                                 <ul class="uk-nav-sub">
                                     <li><a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> All
                                         Categories</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> Home &
+                                    <li>
+                                        <a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> Home &
                                         Kitchen</a></li>
                                     <li><a href="#"><i class="fa fa-angle-left angle-right" aria-hidden="true"></i> Kitchen & Dining</a>
                                     </li>
@@ -86,97 +96,21 @@
                                         <input class="uk-search-input" type="search" placeholder="Search...">
                                     </form>
                                     <br>
-                                    <form>
-                                    <div class="form-group" style="margin-bottom: 0.5rem">
+
+                                    <div *ngFor="let brand of brands$ | async" class="form-group" style="margin-bottom: 0.5rem">
                                         <div class="filter-brands">
                                             <div class="brands-left">
                                                 <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
-                                                <span>Velveta</span>
+                                                <span>{{brand.name}}</span>
                                             </div>
-                                            <div class="brands-right">
+                                          
+                                            <!-- <div class="brands-right">
                                                 <span>(40)</span>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
-                                </form>
-                                    <form>
-                                        <div class="form-group" style="margin-bottom: 0.5rem">
-                                            <div class="filter-brands">
-                                                <div class="brands-left">
-                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
-                                                    <span>Velveta</span>
-                                                </div>
-                                                <div class="brands-right">
-                                                    <span>(40)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <form>
-                                        <div class="form-group" style="margin-bottom: 0.5rem">
-                                            <div class="filter-brands">
-                                                <div class="brands-left">
-                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
-                                                    <span>Velveta</span>
-                                                </div>
-                                                <div class="brands-right">
-                                                    <span>(40)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <form>
-                                        <div class="form-group" style="margin-bottom: 0.5rem">
-                                            <div class="filter-brands">
-                                                <div class="brands-left">
-                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
-                                                    <span>Velveta</span>
-                                                </div>
-                                                <div class="brands-right">
-                                                    <span>(40)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <form>
-                                        <div class="form-group" style="margin-bottom: 0.5rem">
-                                            <div class="filter-brands">
-                                                <div class="brands-left">
-                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
-                                                    <span>Velveta</span>
-                                                </div>
-                                                <div class="brands-right">
-                                                    <span>(40)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <form>
-                                    <div class="form-group" style="margin-bottom: 0.5rem">
-                                        <div class="filter-brands">
-                                            <div class="brands-left">
-                                                <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
-                                                <span>Velveta</span>
-                                            </div>
-                                            <div class="brands-right">
-                                                <span>(40)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                    <form>
-                                        <div class="form-group" style="margin-bottom: 0.5rem">
-                                            <div class="filter-brands">
-                                                <div class="brands-left">
-                                                    <label class="uk-margin-remove"><input class="uk-checkbox" type="checkbox"></label>
-                                                    <span>Velveta</span>
-                                                </div>
-                                                <div class="brands-right">
-                                                    <span>(40)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                  
+                               
                                 </ul>
                             </li>
                         </ul>
@@ -272,13 +206,10 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
 
 <!-- mobile filter offcanvas   -->
-
     <div id="mobileFilter" uk-offcanvas="overlay: true;">
         <div class="uk-offcanvas-bar uk-padding-remove">
             <div class="head-part">

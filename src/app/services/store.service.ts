@@ -7,5 +7,6 @@ import { BehaviorSubject } from 'rxjs';
 export class StoreService {
 
   getSubCategory$ = new BehaviorSubject(null);
+  navData$ = new BehaviorSubject([])
   constructor() { }
 }
