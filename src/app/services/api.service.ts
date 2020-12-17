@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {  getAllHomeSlidersUrl, getBestBrandsUrl, getCategorySlidersUrl, getHomeDataUrl, getNavDataUrl, getSpecificMainCategoryNamesUrl, getSpecificProductUrl, getSubCategoriesUrl, getSubCategoryItemsUrl } from './../../assets/backend/api';
+import {  chanePassword, forgetPassword, getAllHomeSlidersUrl, getBestBrandsUrl, getCategorySlidersUrl, getHomeDataUrl, getNavDataUrl, getProfileUrl, getSpecificMainCategoryNamesUrl, getSpecificProductUrl, getSubCategoriesUrl, getSubCategoryItemsUrl, updateName } from './../../assets/backend/api';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -30,6 +30,21 @@ export class ApiService {
     return this.http.get(getAllHomeSlidersUrl).pipe(map(res=> res['data']))
   }
 
+  getProfile(){
+    return this.http.get(getProfileUrl).pipe(map(res=> res['data']))
+  }
+
+  updateName(form){
+    return this.http.post(updateName, form )
+  }
+
+  changPassword(password){
+    return this.http.post(chanePassword ,password )
+  }
+  
+  forgetPassword(email){
+    return this.http.post(forgetPassword , email)
+  }
   getSpecificCategory(id){
     return this.http.get(getSpecificMainCategoryNamesUrl + id).pipe(map(res=> res['data']))
   }
@@ -45,8 +60,6 @@ export class ApiService {
   getCategoryBrands(id){
     return this.http.get(getBestBrandsUrl + id).pipe(map(res=> res['data']))
   }
-  
-
 
 }
 

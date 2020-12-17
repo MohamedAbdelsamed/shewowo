@@ -4,6 +4,8 @@ const auth = 'api/auth/';
 const mobile = 'api/mobile/'; 
 const dashboard = 'api/dashboard/'; 
 const enduser =  'api/enduser/';
+const user = 'api/user/'
+
 // const lang = localStorage.getItem('lang') || 0;
 const lang =  0;
 
@@ -38,6 +40,7 @@ export const deleteMainCategoryUrl = baseUrl + dashboard + 'delete_category/'
 export const deleteMainSliderUrl = baseUrl + dashboard + 'delete_home_slider/'
 //special Category
 
+
 export const deleteBestBrandUrl = baseUrl + dashboard + 'delete_category/'
 export const deleteSubCategoryUrl = baseUrl + dashboard + 'delete_home_slider/'
 export const deleteSubCategoryOfSubCategoryUrl = baseUrl + dashboard + 'delete_category/'
@@ -49,8 +52,12 @@ export const updateMainCategoryUrl = baseUrl + dashboard + 'update_category/'
 
 
 // aut 
-export const vendorSignUpUrl = baseUrl + auth + 'register_vendor'
+export const vendorSignUpUrl = baseUrl + auth + 'register_vendor';
 export const signUpUrl = baseUrl + auth + 'register'
+export const login = baseUrl + auth + 'login'
+export const forgetPassword = baseUrl + auth + 'forget_password'
+// export const vendorSignUpUrl = baseUrl + auth + 'register_vendor'
+// export const signUpUrl = baseUrl + auth + 'register'
 export const loginUpUrl = baseUrl + auth + 'login'
 
 
@@ -60,5 +67,12 @@ export const getHomeDataUrl = baseUrl + enduser + 'home/data/' +lang
 export const getSpecificProductUrl = baseUrl + enduser + 'item/'
 export const getSubCategoriesUrl = baseUrl + enduser + 'category/subs/'
 export const getSubCategoryItemsUrl = baseUrl + enduser + 'subcategory/items/'
+
+// Profile   {{url}}/api/user/updateName
+export const getProfileUrl = baseUrl + user + 'profile' 
+export const updateName = baseUrl + user + 'updateName'
+export const chanePassword = baseUrl + user + 'update_password'
+
+
 
 

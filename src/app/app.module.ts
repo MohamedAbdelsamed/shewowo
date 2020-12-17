@@ -84,13 +84,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     MatDialogModule,
     // ZorroModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
+    TranslateModule.forRoot(),
     FormsModule,
     BrowserAnimationsModule,
     SharedModule,
@@ -101,7 +95,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     HttpClient, { provide: LocationStrategy, useClass: HashLocationStrategy },
-    {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptorService , multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptorService , multi: true},
+     
 
   ],
   bootstrap: [AppComponent]

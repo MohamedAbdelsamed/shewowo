@@ -6,6 +6,7 @@ import {ActivatedRoute, Route, Router} from '@angular/router';
 import { ApiService } from './../../services/api.service';
 import { baseUrl } from './../../../assets/backend/api';
 import { StoreService } from 'src/app/services/store.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 declare const $: any;
 
@@ -32,13 +33,15 @@ export class NavbarComponent implements OnInit {
   subCategories = [];
 
   activeIndex = 0;
-
+  token;
+  isLogged: boolean = false;
   constructor( private language: LanguageService,
                private translate: TranslateService, 
                private api: ApiService,
                private store: StoreService,
                private route: ActivatedRoute,
-               private router: Router
+               private router: Router,
+               private auth: AuthService
                ) {
   }
 
@@ -51,6 +54,8 @@ export class NavbarComponent implements OnInit {
 
     Uikit.offcanvas('#offcanvas-slide', {flip: this.isArabic});
     this.getNavData();
+    this.token = this.auth.getToken();
+    this.checkLogin();
   }
 
   private getNavData(){
@@ -61,8 +66,6 @@ export class NavbarComponent implements OnInit {
       this.store.getSubCategory$.next(this.activeCategory['id']);
     })
   }
-
-  
 
   toggleDirection() {
     this.language.toggleLang();
@@ -85,7 +88,6 @@ export class NavbarComponent implements OnInit {
   toggleSmallSearch() {
     this.openSearch = !this.openSearch;
   }
-
 
   getRigthPart(index) {
     this.activeCategory= this.navData[index]
@@ -110,6 +112,20 @@ export class NavbarComponent implements OnInit {
     this.navOpacity = !this.navOpacity;
   }
 
+  checkLogin(){
+   if(this.auth.isTokenExpired(this.token)){
+     this.isLogged = false;
+   }
+   else{
+     this.isLogged = true;
+   }
+  }
+
+  signOut(){
+    debugger
+    localStorage.clear();
+    this.router.navigate(['login'])
+  }
 
 }
 

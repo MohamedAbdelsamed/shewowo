@@ -10,8 +10,10 @@
     </nav>
     
     <section class="main-wrapper text-center">
-        <div class="img-wrapper mb-40 d-flex justify-content-center">
-            <img src="assets/logo-dark.png" class="logo" alt="">
+        <div  class="img-wrapper mb-40 d-flex justify-content-center">
+            <a routerLink="/">
+                <img  src="assets/logo-dark.png" class="logo" alt="">
+            </a>
         </div>
         <h4 class="m-0 p-0 text-center">Welcome Back</h4>
         <h4 class="font-weight-bold h2 text-center mt-0">Sign in to your account </h4>
@@ -22,10 +24,8 @@
                 sign Up
             </a>
         </p>
-       
-       
-    
-        <form #userForm="ngForm" (ngSubmit)="login(userForm.value);" [ngClass]="{'disable': isLoading}" class="login-form" >
+
+        <form #userForm="ngForm" (ngSubmit)="takeAction(userForm.value)" [ngClass]="{'disable': isLoading}" class="login-form" >
             <div class="form-group user-wrapper">
                 <input 
                     [ngClass]="{ 'err': email.invalid && email.touched}"
@@ -42,7 +42,7 @@
               </div>
             </div>
         
-            <div class="form-group user-wrapper">
+            <div *ngIf="action === actions.login" class="form-group user-wrapper">
                 <input 
                     [ngClass]="{ 'err': password.invalid && password.touched}"
         
@@ -57,7 +57,7 @@
                 </div>
             </div>
         
-            <a routerLink ="/vendor_signUp" class="d-block sign-in mb-10 text-center forget-password">
+            <a routerLink ="/forget_password" class="d-block sign-in mb-10 text-center forget-password">
                 forget your password?
             </a>
 

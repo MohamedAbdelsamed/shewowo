@@ -41,7 +41,7 @@ const routes: Routes = [
 
 
   {path: 'signup', component: SignupComponent},
-  {path: 'login', component: LoginComponent},
+  {path: ':action', component: LoginComponent},
 
   
   {path: 'vendor_signUp', component: VendorSignupComponent}
