@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './routes/home/home.component';
@@ -9,7 +8,7 @@ import { RegisterComponent } from './routes/auth/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-// import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { TopSliderComponent } from './components/top-slider/top-slider.component';
 import { CategorySliderComponent } from './components/category-slider/category-slider.component';
@@ -40,7 +39,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CaretComponent } from './components/caret/caret.component';
 import { ApiInterceptorService } from './services/api-interceptor.service';
 import { ToastrModule } from 'ngx-toastr';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -86,25 +84,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     MatDialogModule,
-    BrowserAnimationsModule, // required animations module
-   
-    ToastrModule.forRoot(),
-    
-    // .forRoot({
-    //   timeOut: 10000,
-    //   positionClass: 'toast-bottom-right',
-    //   preventDuplicates: true,
-    // })
-    ,
-
-    
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
+    // ZorroModule,
+    TranslateModule.forRoot(),
     FormsModule,
     BrowserAnimationsModule,
     SharedModule,

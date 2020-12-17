@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {  getAllHomeSlidersUrl, getHomeDataUrl, getNavDataUrl, getProfileUrl, updateName } from './../../assets/backend/api';
+import { getSpecificProductUrl, getSubCategoriesUrl, getAllHomeSlidersUrl, getHomeDataUrl, getNavDataUrl, getProfileUrl, updateName, chanePassword, forgetPassword } from './../../assets/backend/api';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -18,6 +18,14 @@ export class ApiService {
     return this.http.get(getHomeDataUrl).pipe(map(res=> res['data']))
   }
 
+  getSubCategories(id){
+    return this.http.get(getSubCategoriesUrl + id).pipe(map(res=> res['data']));
+  }
+
+  getSpecificProduct(id){
+    return this.http.get(getSpecificProductUrl + id).pipe(map(res=> res['data'][0]));
+  }
+
   getHomeSlider(){
     return this.http.get(getAllHomeSlidersUrl).pipe(map(res=> res['data']))
   }
@@ -29,5 +37,12 @@ export class ApiService {
   updateName(form){
     return this.http.post(updateName, form )
   }
+
+  changPassword(password){
+    return this.http.post(chanePassword ,password )
+  }
   
+  forgetPassword(email){
+    return this.http.post(forgetPassword , email)
+  }
 }

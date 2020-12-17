@@ -21,9 +21,9 @@ import { CaretComponent } from './components/caret/caret.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent, children:[
-    {path: '', component: HomeComponent},
-  {path: 'productfilter', component: ProductFiltirationComponent},
-  {path: 'product', component: ProductComponent},
+  {path: '', component: HomeComponent},
+  {path: 'products/:id', component: ProductFiltirationComponent},
+  {path: 'product/:id', component: ProductComponent},
   {path: 'category', component: CategoryComponent},
   {path: 'caret', component: CaretComponent},
   ]},
@@ -40,7 +40,7 @@ const routes: Routes = [
 
 
   {path: 'signup', component: SignupComponent},
-  {path: 'login', component: LoginComponent},
+  {path: ':action', component: LoginComponent},
 
   
   {path: 'vendor_signUp', component: VendorSignupComponent}

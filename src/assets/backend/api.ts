@@ -30,7 +30,6 @@ export const getSpecificMainCategoryNamesUrl = baseUrl + dashboard + 'specific_c
 // for special category
 export const getSpecialCategoryUrl = baseUrl + dashboard + 'specific_category/'
 export const getBestBrandsUrl = baseUrl + dashboard + 'all_category_brands/'
-export const getSubCategoriesUrl = baseUrl + dashboard + 'all_sub_category_names/'
 export const getCategorySlidersUrl = baseUrl + dashboard + 'all_category_sliders/'
 export const getCategorySpecialImagesUrl = baseUrl + dashboard + 'category_special_imgs/'
 export const getSubCategoriesOfSubCategoryUrl = baseUrl + dashboard + 'all_sub_ofsub_category_names/'
@@ -56,6 +55,7 @@ export const updateMainCategoryUrl = baseUrl + dashboard + 'update_category/'
 export const vendorSignUpUrl = baseUrl + auth + 'register_vendor';
 export const signUpUrl = baseUrl + auth + 'register'
 export const login = baseUrl + auth + 'login'
+export const forgetPassword = baseUrl + auth + 'forget_password'
 // export const vendorSignUpUrl = baseUrl + auth + 'register_vendor'
 // export const signUpUrl = baseUrl + auth + 'register'
 export const loginUpUrl = baseUrl + auth + 'login'
@@ -64,7 +64,14 @@ export const loginUpUrl = baseUrl + auth + 'login'
 // get 
 export const getNavDataUrl = baseUrl + enduser + 'navbarData/' +lang
 export const getHomeDataUrl = baseUrl + enduser + 'home/data/' +lang
+export const getSpecificProductUrl = baseUrl + enduser + 'item/'
+export const getSubCategoriesUrl = baseUrl + enduser + 'category/subs/'
 
 // Profile   {{url}}/api/user/updateName
 export const getProfileUrl = baseUrl + user + 'profile' 
 export const updateName = baseUrl + user + 'updateName'
+export const chanePassword = baseUrl + user + 'update_password'
+
+
+
+

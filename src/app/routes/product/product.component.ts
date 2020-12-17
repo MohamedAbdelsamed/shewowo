@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { baseUrl } from 'src/assets/backend/api';
 import Uikit from 'uikit';
 
 declare const $: any;
@@ -10,6 +13,13 @@ declare const $: any;
 })
 export class ProductComponent implements OnInit {
   isArabic: boolean;
+  product ;
+  isLoading: boolean = false;
+  baseUrl = baseUrl
+  counter;
+
+  productId = this.route.snapshot.paramMap.get('id');
+
   document = document;
   isOpen: boolean = false;
 
@@ -19,9 +29,10 @@ export class ProductComponent implements OnInit {
     {number: 3, img: '../../../assets/product-preview.jpg'}
   ];
 
-  constructor() { }
+  constructor(private api : ApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.getSpecificProduct();
     if (window.localStorage.getItem('lang') === 'ar') {
       this.isArabic = true;
     } else {
@@ -30,8 +41,16 @@ export class ProductComponent implements OnInit {
 
     window.addEventListener('scroll', () => {
       const scrollTop = $(window).scrollTop();
-      console.log(scrollTop);
     });
+  }
+
+  private getSpecificProduct(){
+    this.api.getSpecificProduct(this.productId).subscribe(res=>{
+      this.isLoading = false;
+      console.log(res, 'product');
+      this.product = res;
+      this.counter = this.product.counter;
+    })
   }
 
   goTo(index) {

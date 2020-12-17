@@ -5,6 +5,8 @@ import Uikit from 'uikit';
 import {ActivatedRoute, Route, Router} from '@angular/router';
 import { ApiService } from './../../services/api.service';
 import { baseUrl } from './../../../assets/backend/api';
+import { StoreService } from 'src/app/services/store.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 declare const $: any;
 
@@ -27,21 +29,24 @@ export class NavbarComponent implements OnInit {
   openSearch = false;
   navOpacity = false;
   navData = [];
-
   activeCategory = [];
-  activeIndex = 0;
+  subCategories = [];
 
+  activeIndex = 0;
+  token;
+  isLogged: boolean = false;
   constructor( private language: LanguageService,
                private translate: TranslateService, 
                private api: ApiService,
+               private store: StoreService,
                private route: ActivatedRoute,
-               private router: Router
+               private router: Router,
+               private auth: AuthService
                ) {
   }
 
   ngOnInit() {
     this.router.url
-    // this.direction = this.language.direction;
     this.lang = this.language.language;
     this.translate.setDefaultLang(this.lang);
     this.lang === 'ar' ? this.isArabic = true : this.isArabic = false;
@@ -49,18 +54,19 @@ export class NavbarComponent implements OnInit {
 
     Uikit.offcanvas('#offcanvas-slide', {flip: this.isArabic});
     this.getNavData();
+    this.token = this.auth.getToken();
+    this.checkLogin();
   }
 
   private getNavData(){
-    this.api .getNavData().subscribe(res=>{
-      this.navData = res;
-      this.activeCategory = this.navData[0];
-      
+    this.api.getNavData().subscribe(res=>{
+      this.navData = res;      
+      this.activeCategory = this.navData[0];      
+      this.store.getSubCategory$.next(this.activeCategory['id']);
     })
   }
 
   toggleDirection() {
-    // console.log(this.route['_routerState'].snapshot.url);
     this.language.toggleLang();
     this.direction = this.language.direction;
     this.switchLang();
@@ -71,7 +77,6 @@ export class NavbarComponent implements OnInit {
       this.language.language = 'en';
       this.lang = this.language.language;
       this.translate.use(this.lang);
-      console.log(this.lang);
     } else {
       this.language.language = 'ar';
       this.lang = this.language.language;
@@ -82,7 +87,6 @@ export class NavbarComponent implements OnInit {
   toggleSmallSearch() {
     this.openSearch = !this.openSearch;
   }
-
 
   getRigthPart(index) {
     this.activeCategory= this.navData[index]
@@ -107,6 +111,20 @@ export class NavbarComponent implements OnInit {
     this.navOpacity = !this.navOpacity;
   }
 
+  checkLogin(){
+   if(this.auth.isTokenExpired(this.token)){
+     this.isLogged = false;
+   }
+   else{
+     this.isLogged = true;
+   }
+  }
+
+  signOut(){
+    debugger
+    localStorage.clear();
+    this.router.navigate(['login'])
+  }
 
 }
 

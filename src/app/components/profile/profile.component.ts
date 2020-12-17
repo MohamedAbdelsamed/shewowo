@@ -22,10 +22,10 @@ export class ProfileComponent implements OnInit {
   first_name: string;
   last_name: string;
   email: string;
+  oldPassword:number;
+  newPassword:number;
   constructor(
-    private api: ApiService,
-    // private toastr: ToastrService
-    ) { }
+    private api: ApiService) { }
 
 
   ngOnInit() {
@@ -44,13 +44,15 @@ export class ProfileComponent implements OnInit {
 
   updateProfile(){
     this.api.updateName({first_name: this.first_name, last_name: this.last_name})
-     .subscribe(res=>{
-       console.log(res)
-       if(res){
-       }else{
-       }
+     .subscribe(res=>{});    
+  }
 
-     });    
+  changePassword(){
+    console.log("password")
+    this.api.changPassword({password: this.oldPassword,new_password:this.newPassword}).subscribe(x =>{
+      console.log("password", x)
+    })
+
   }
   
 }

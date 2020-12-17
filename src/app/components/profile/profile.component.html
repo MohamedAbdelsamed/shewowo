@@ -53,13 +53,19 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label>password</label>
-                            <input type="password" class="form-control" name="password" [(ngModel)]="password">
+                            <label>old Password</label>
+                            <input type="password" class="form-control" name="password" [(ngModel)]="oldPassword">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>new Password</label>
+                            <input type="password" class="form-control" name="new-password" [(ngModel)]="newPassword">
                         </div>
                     </div>
                 </div>
                 <div class="text-right button-wrapper">
-                    <button type="submit" class="btn" value="save">
+                    <button type="submit" class="btn" value="save" (click)="changePassword()">
                         <span>Change Password</span>
                     </button>
                 </div>
