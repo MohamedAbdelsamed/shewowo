@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { getSpecificProductUrl, getSubCategoriesUrl, getAllHomeSlidersUrl, getHomeDataUrl, getNavDataUrl, getProfileUrl, updateName, chanePassword, forgetPassword } from './../../assets/backend/api';
+import { getSpecificProductUrl, getSubCategoriesUrl, getAllHomeSlidersUrl, getHomeDataUrl, getNavDataUrl, getProfileUrl, updateName, chanePassword, forgetPassword, getCategorySlidersUrl, getSpecificMainCategoryNamesUrl, getSubCategoryItemsUrl } from './../../assets/backend/api';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -45,4 +45,19 @@ export class ApiService {
   forgetPassword(email){
     return this.http.post(forgetPassword , email)
   }
+  getSpecificCategory(id){
+    return this.http.get(getSpecificMainCategoryNamesUrl + id).pipe(map(res=> res['data']))
+  }
+
+  getCategorySliders(id){
+    return this.http.get(getCategorySlidersUrl + id).pipe(map(res=> res['data']))
+  }
+
+  getSubCategoryItems(id){
+    return this.http.get(getSubCategoryItemsUrl + id).pipe(map(res=> res['data']))
+  }
+
+
+
 }
+

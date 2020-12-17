@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {LanguageService} from './services/language.service';
 import {TranslateService} from '@ngx-translate/core';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',

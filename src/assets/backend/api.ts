@@ -66,6 +66,7 @@ export const getNavDataUrl = baseUrl + enduser + 'navbarData/' +lang
 export const getHomeDataUrl = baseUrl + enduser + 'home/data/' +lang
 export const getSpecificProductUrl = baseUrl + enduser + 'item/'
 export const getSubCategoriesUrl = baseUrl + enduser + 'category/subs/'
+export const getSubCategoryItemsUrl = baseUrl + enduser + 'subcategory/items/'
 
 // Profile   {{url}}/api/user/updateName
 export const getProfileUrl = baseUrl + user + 'profile' 

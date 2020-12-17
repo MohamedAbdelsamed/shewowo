@@ -14,6 +14,9 @@ export class TopSliderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    // setTimeout(() => {
+    //   console.log(this.images);
+      
+    // }, 2000);
   }
 }

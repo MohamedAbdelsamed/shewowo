@@ -171,8 +171,8 @@
               <div class="hover-overlayer">
                 <div class="layer-content">
                   <div class="left-part">
-                    <h5 [routerLink]="'/products/'+ item.id" *ngFor="let item of navData; index as i" [ngClass]="{'active': i === activeIndex}" class="main-cat" (mouseover)="getRigthPart(i)">
-                    
+                    <h5 [routerLink]="'/category/' + item.id" *ngFor="let item of navData; index as i" [ngClass]="{'active': i === activeIndex}" class="main-cat" (mouseover)="getRigthPart(i)">
+                      
                       {{item.name}}
                     </h5>
                   </div>

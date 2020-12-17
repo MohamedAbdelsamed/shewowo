@@ -14,6 +14,7 @@ declare const $: any;
 export class ProductComponent implements OnInit {
   isArabic: boolean;
   product ;
+  subCatId;
   isLoading: boolean = false;
   baseUrl = baseUrl
   counter;
