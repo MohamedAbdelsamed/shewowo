@@ -57,12 +57,22 @@
                 </div>
             </div>
         
-            <a routerLink ="/forget_password" class="d-block sign-in mb-10 text-center forget-password">
+            <a *ngIf="action === actions.login" routerLink ="/forget_password" class="d-block sign-in mb-10 text-center forget-password">
                 forget your password?
             </a>
 
+            <a *ngIf="action !== actions.login" routerLink ="/login" class="d-block sign-in mb-10 text-center forget-password">
+               login
+            </a>
+
             <div class="form-group">
-                <input [disabled]="!userForm.valid" type="submit" class="btn submit-btn text-uppercase form-control submit-btn" value="creat accounts">
+                <button *ngIf="action === actions.login" [disabled]="!userForm.valid" type="submit" class="btn submit-btn text-uppercase form-control submit-btn">
+                 login 
+                </button>
+
+                <button *ngIf="action !== actions.login" [disabled]="!userForm.valid" type="submit" class="btn submit-btn text-uppercase form-control submit-btn">
+                    forget-Password 
+                </button>
             </div>
             
             <div *ngIf="isLoading" class="row spinner-wrapper">

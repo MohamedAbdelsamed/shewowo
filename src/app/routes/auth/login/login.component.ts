@@ -52,8 +52,9 @@ export class LoginComponent implements OnInit {
   }
 
   forgetPassword(form){
-    console.log(form);
-    
+    this.auth.forgetPassword(form).subscribe(res=>{
+      console.log("here",form,res);
+    })
   }
   
 

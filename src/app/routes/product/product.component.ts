@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { baseUrl } from 'src/assets/backend/api';
 import Uikit from 'uikit';
 
 declare const $: any;
-
+export interface item{
+  item_id?:number,
+  count?:number,
+  price?:number,
+  user_id?:number,
+}
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -17,12 +23,16 @@ export class ProductComponent implements OnInit {
   subCatId;
   isLoading: boolean = false;
   baseUrl = baseUrl
-  counter;
+  counter = 1;
 
   productId = this.route.snapshot.paramMap.get('id');
 
   document = document;
   isOpen: boolean = false;
+  item: item = {};
+  imageToCaret:string;
+  totalPrice:number;
+  isLogin:boolean = false;
 
   arr = [
     {number: 1, img: '../../../assets/product-preview.jpg'},
@@ -30,7 +40,9 @@ export class ProductComponent implements OnInit {
     {number: 3, img: '../../../assets/product-preview.jpg'}
   ];
 
-  constructor(private api : ApiService, private route: ActivatedRoute) { }
+  constructor(private api : ApiService, 
+              private route: ActivatedRoute,
+              private auth: AuthService) { }
 
   ngOnInit() {
     this.getSpecificProduct();
@@ -43,6 +55,21 @@ export class ProductComponent implements OnInit {
     window.addEventListener('scroll', () => {
       const scrollTop = $(window).scrollTop();
     });
+
+    this.getProductId();
+
+    this.item.user_id = JSON.parse(localStorage.getItem('user')).id
+    this.item.count = this.counter;
+  }
+
+  getProductId(){
+    this.route.paramMap.subscribe(res => {
+      this.item.item_id = +res.get('id')
+    })
+  }
+
+  getCount(){
+    this.item.count = this.counter;
   }
 
   private getSpecificProduct(){
@@ -50,7 +77,7 @@ export class ProductComponent implements OnInit {
       this.isLoading = false;
       console.log(res, 'product');
       this.product = res;
-      this.counter = this.product.counter;
+      this.item.price = res.price
     })
   }
 
@@ -59,6 +86,19 @@ export class ProductComponent implements OnInit {
   }
 
   toggleSideNav(){
+    if(this.isLogin = this.auth.isUserLogedIn()){
       this.isOpen = !this.isOpen;
+    }
+  }
+
+  addToCaret(){
+    if(this.isLogin = this.auth.isUserLogedIn()){
+      this.api.addToCaret(this.item).subscribe(res =>{
+        this.imageToCaret = this.arr[0].img
+        this.totalPrice = this.item.price * this.counter
+      })
+    }else{
+      alert("you should login")
+    }
   }
 }

@@ -122,7 +122,6 @@ export class NavbarComponent implements OnInit {
   }
 
   signOut(){
-    debugger
     localStorage.clear();
     this.router.navigate(['login'])
   }

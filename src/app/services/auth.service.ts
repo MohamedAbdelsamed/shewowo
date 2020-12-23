@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { login, signUpUrl, vendorSignUpUrl } from './../../assets/backend/api';
+import { forgetPassword, login, signUpUrl, vendorSignUpUrl } from './../../assets/backend/api';
 import {map} from 'rxjs/operators';
 
 
@@ -36,6 +36,10 @@ export class AuthService {
     return this.http.post(login, form).pipe(map((res:any)=>res.data));
   }
 
+  forgetPassword(email){
+    return this.http.post(forgetPassword , email)
+  }
+
   getToken(){
     this.token = localStorage.getItem('token')
 
@@ -47,7 +51,10 @@ export class AuthService {
   }
 
   isTokenExpired(token: string) {
+    if(!token) return true;
+    
     const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
     return (Math.floor((new Date).getTime() / 1000)) >= expiry;
   }
+
 }

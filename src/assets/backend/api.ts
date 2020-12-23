@@ -6,6 +6,7 @@ const dashboard = 'api/dashboard/';
 const enduser =  'api/enduser/';
 const user = 'api/user/'
 
+
 // const lang = localStorage.getItem('lang') || 0;
 const lang =  0;
 
@@ -73,6 +74,8 @@ export const getProfileUrl = baseUrl + user + 'profile'
 export const updateName = baseUrl + user + 'updateName'
 export const chanePassword = baseUrl + user + 'update_password'
 
+// card
+export const addToCaret = baseUrl + user + 'card/add'
+export const getCaret = baseUrl + user + 'card'
 
-
-
+// {{url}}/api/user/card
